@@ -64,10 +64,10 @@
 
         num_layer {
             bindings = <
-&kp ESC  &kp N1  &kp N2   &kp N3         &kp N4    &kp N5      &kp N6        &kp N7    &kp N8         &kp N9    &kp N0    &kp MINUS
-&trans   &kp N6  &kp N7   &kp N8         &kp N9    &kp N0      &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LBKT  &kp RBKT  &kp EQUAL
-&none    &comma  &period  &trans         &kp LBKT  &kp RBKT    &kp LEFT      &kp DOWN  &kp RIGHT      &trans    &trans    &trans
-                          &mt LCTRL DEL  &trans    &trans      &trans        &trans    &mt RCTRL DEL
+&kp ESC  &kp N1  &kp N2   &kp N3           &kp N4          &kp N5                            &kp HOME      &trans    &kp END        &trans  &trans  &kp MINUS
+&trans   &kp N6  &kp N7   &kp N8           &kp N9          &kp N0                            &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &trans  &trans  &kp EQUAL
+&none    &comma  &period  &mt UNDER MINUS  &mt PLUS EQUAL  &mt RIGHT_BRACKET LEFT_BRACKET    &kp LEFT      &kp DOWN  &kp RIGHT      &trans  &trans  &trans
+                          &mt LCTRL DEL    &trans          &trans                            &trans        &trans    &mt RCTRL DEL
             >;
 
             label = "Numbers";
