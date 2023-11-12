@@ -64,10 +64,10 @@
 
         num_layer {
             bindings = <
-&kp ESC  &kp N1  &kp N2   &kp N3           &kp N4          &kp N5                            &kp HOME      &kp PG_DN    &kp PAGE_UP    &kp END        &trans  &kp MINUS
-&trans   &kp N6  &kp N7   &kp N8           &kp N9          &kp N0                            &kp LEFT      &kp DOWN     &kp UP         &kp RIGHT      &trans  &kp EQUAL
-&none    &comma  &period  &mt UNDER MINUS  &mt PLUS EQUAL  &mt RIGHT_BRACKET LEFT_BRACKET    &kp LA(LEFT)  &kp LG(END)  &kp LG(HOME)   &kp LA(RIGHT)  &trans  &trans
-                          &mt LCTRL DEL    &trans          &trans                            &trans        &trans       &mt RCTRL DEL
+&kp ESC  &kp N1  &kp N2   &kp N3           &kp N4          &kp N5                            &kp HOME      &kp PG_DN     &kp PAGE_UP    &kp END        &none  &kp MINUS
+&trans   &kp N6  &kp N7   &kp N8           &kp N9          &kp N0                            &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT      &none  &kp EQUAL
+&none    &comma  &period  &mt UNDER MINUS  &mt PLUS EQUAL  &mt RIGHT_BRACKET LEFT_BRACKET    &kp LA(LEFT)  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LA(RIGHT)  &none  &trans
+                          &mt LCTRL DEL    &trans          &trans                            &trans        &trans        &mt RCTRL DEL
             >;
 
             label = "Numbers/Nav";
