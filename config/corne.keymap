@@ -21,6 +21,16 @@
             bindings = <&kp RBKT>;
             key-positions = <31 32>;
         };
+
+        comma {
+            bindings = <&comma>;
+            key-positions = <25 26>;
+        };
+
+        period {
+            bindings = <&period>;
+            key-positions = <26 27>;
+        };
     };
 
     macros {
