@@ -83,7 +83,7 @@
 &kp ESC  &kp N1  &kp N2   &kp N3           &kp N4          &kp N5                            &kp PG_UP  &kp LA(LEFT)  &kp UP         &kp LA(RIGHT)  &none       &kp MINUS
 &trans   &kp N6  &kp N7   &kp N8           &kp N9          &kp N0                            &kp PG_DN  &kp LEFT      &kp DOWN       &kp RIGHT      &none       &kp EQUAL
 &none    &comma  &period  &mt UNDER MINUS  &mt PLUS EQUAL  &mt RIGHT_BRACKET LEFT_BRACKET    &none      &kp LG(HOME)  &none          &kp LA(END)    &kp RSHIFT  &trans
-                          &mt LCTRL DEL    &trans          &trans                            &trans     &trans        &mt RCTRL DEL
+                          &mt LCTRL DEL    &kp LC(SPACE)   &trans                            &trans     &trans        &mt RCTRL DEL
             >;
 
             label = "Numbers/Nav";
