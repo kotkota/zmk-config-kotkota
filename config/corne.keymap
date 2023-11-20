@@ -104,7 +104,7 @@
 &trans  &kp EXCL   &kp AT    &kp HASH       &kp DLLR              &kp PRCNT                &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR           &kp RPAR       &kp UNDER
 &trans  &kp CARET  &kp AMPS  &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none      &none     &none         &kp LBRC           &kp RBRC       &kp PLUS
 &kp LT  &kp GT     &kp LBKT  &kp RBKT       &kp LEFT_BRACE        &kp RIGHT_BRACE          &none      &none     &none         &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
-                             &kp BACKSPACE  &kp GLOBE             &kp ENTER                &kp SPACE  &trans    &kp DELETE
+                             &kp BACKSPACE  &kp LG(SPACE)         &kp ENTER                &kp SPACE  &trans    &kp DELETE
             >;
 
             label = "Symbols";
@@ -130,10 +130,5 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        num+sym {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
     };
 };
