@@ -73,10 +73,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt ESCAPE TAB  &kp Q               &kp W       &kp E                &kp R         &kp T             &kp Y           &kp U         &kp I                &kp O       &kp P           &kp LEFT_BRACKET
-&kp LSHIFT      &mt LEFT_CONTROL A  &mt LALT S  &mt LCMD D           &mt LSHIFT F  &kp G             &kp H           &mt RSHIFT J  &mt RCMD K           &mt RALT L  &mt RCTRL SEMI  &mt RSHFT SINGLE_QUOTE
-&lt 1 GRAVE     &lt 2 Z             &kp X       &kp C                &kp V         &kp B             &kp N           &kp M         &kp COMMA            &kp DOT     &kp SLASH       &lt 3 BACKSLASH
-                                                &mt LCTRL BACKSPACE  &mo 1         &mt LGUI SPACE    &mt RGUI ENTER  &mo 2         &mt RCTRL BACKSPACE
+&mt LS(LCMD) ESC            &kp Q         &kp W        &kp E       &kp R       &kp T             &kp Y           &kp U       &kp I            &kp O        &kp P            &kp LEFT_BRACKET
+&mt LA(LCMD) TAB            &mt LSHIFT A  &mt LCTRL S  &mt LALT D  &mt LCMD F  &kp G             &kp H           &mt RCMD J  &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &kp SINGLE_QUOTE
+&mt LA(LC(LS(LCMD))) GRAVE  &kp Z         &kp X        &kp C       &kp V       &kp B             &kp N           &kp M       &kp COMMA        &kp DOT      &kp SLASH        &lt 3 BACKSLASH
+                                                       &lt 2 DEL   &mo 1       &mt LGUI SPACE    &mt RALT ENTER  &mo 2       &lt 1 BACKSPACE
             >;
 
             label = "Default";
@@ -84,10 +84,10 @@
 
         num_layer {
             bindings = <
-&kp ESC       &kp N1  &kp N2   &kp N3           &kp N4          &kp N5                            &kp PG_UP  &kp LA(LEFT)  &kp UP         &kp LA(RIGHT)  &none       &kp MINUS
-&kp CAPSLOCK  &kp N6  &kp N7   &kp N8           &kp N9          &kp N0                            &kp PG_DN  &kp LEFT      &kp DOWN       &kp RIGHT      &none       &kp EQUAL
-&none         &comma  &period  &mt UNDER MINUS  &mt PLUS EQUAL  &mt RIGHT_BRACKET LEFT_BRACKET    &none      &kp LG(HOME)  &none          &kp LA(END)    &kp RSHIFT  &trans
-                               &mt LCTRL DEL    &kp LC(SPACE)   &trans                            &trans     &trans        &mt RCTRL DEL
+&trans  &kp N1  &kp N2   &kp N3           &kp N4          &kp N5                            &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none       &kp MINUS
+&trans  &kp N6  &kp N7   &kp N8           &kp N9          &kp N0                            &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none       &kp EQUAL
+&trans  &comma  &period  &mt UNDER MINUS  &mt PLUS EQUAL  &mt RIGHT_BRACKET LEFT_BRACKET    &none      &kp HOME      &none     &kp END        &kp RSHIFT  &trans
+                         &kp BACKSPACE    &trans          &kp LC(SPACE)                     &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -101,10 +101,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB            &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT                &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR           &kp RPAR       &kp UNDER
-&kp CAPS           &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans     &trans    &trans        &kp LBRC           &kp RBRC       &kp PLUS
-&kp LA(LC(LG(Z)))  &none      &trans    &trans     &kp LEFT_BRACE        &kp RIGHT_BRACE          &trans     &trans    &trans        &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
-                                        &trans     &trans                &trans                   &trans     &trans    &trans
+&trans  &kp EXCL   &kp AT    &kp HASH       &kp DLLR              &kp PRCNT                &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR           &kp RPAR       &kp UNDER
+&trans  &kp CARET  &kp AMPS  &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none      &none     &none         &kp LBRC           &kp RBRC       &kp PLUS
+&kp LT  &kp GT     &kp LBKT  &kp RBKT       &kp LEFT_BRACE        &kp RIGHT_BRACE          &none      &none     &none         &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
+                             &kp BACKSPACE  &kp GLOBE             &kp ENTER                &kp SPACE  &trans    &kp DELETE
             >;
 
             label = "Symbols";
@@ -118,13 +118,22 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp C_POWER  &trans        &trans        &trans        &trans        &trans        &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP
-&caps_word   &trans        &trans        &trans        &trans        &trans        &trans          &trans            &trans      &kp UP      &trans             &kp LS(LA(LC(LG(SQT))))
-&kp GLOBE    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &sys_reset      &trans            &kp LEFT    &kp DOWN    &kp RIGHT          &trans
+&kp C_POWER  &none         &none         &none         &none         &none         &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP
+&caps_word   &none         &none         &none         &none         &none         &none           &none             &none       &kp UP      &caps_word         &kp LS(LA(LC(LG(SQT))))
+&kp GLOBE    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &sys_reset      &none             &kp LEFT    &kp DOWN    &kp RIGHT          &none
                                          &trans        &trans        &trans        &trans          &trans            &trans
             >;
 
             label = "Media";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        num+sym {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
