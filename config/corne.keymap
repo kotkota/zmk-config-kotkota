@@ -74,7 +74,7 @@
 
             bindings = <
 &mt LS(LCMD) ESC            &kp Q         &kp W        &kp E       &kp R       &kp T             &kp Y           &kp U       &kp I            &kp O        &kp P            &kp LEFT_BRACKET
-&mt LA(LCMD) TAB            &mt LSHIFT A  &mt LCTRL S  &mt LALT D  &mt LCMD F  &kp G             &kp H           &mt RCMD J  &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &kp SINGLE_QUOTE
+&mt LA(LCMD) TAB            &mt LSHIFT A  &mt LCTRL S  &mt LALT D  &mt LCMD F  &kp G             &kp H           &mt RCMD J  &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &lt 4 APOS
 &mt LA(LC(LS(LCMD))) GRAVE  &kp Z         &kp X        &kp C       &kp V       &kp B             &kp N           &kp M       &kp COMMA        &kp DOT      &kp SLASH        &lt 3 BACKSLASH
                                                        &lt 2 DEL   &mo 1       &mt LGUI SPACE    &mt RALT ENTER  &mo 2       &lt 1 BACKSPACE
             >;
@@ -84,10 +84,10 @@
 
         num_layer {
             bindings = <
-&trans  &kp N1  &kp N2   &kp N3           &kp N4          &kp N5                            &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none       &kp MINUS
-&trans  &kp N6  &kp N7   &kp N8           &kp N9          &kp N0                            &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none       &kp EQUAL
-&trans  &comma  &period  &mt UNDER MINUS  &mt PLUS EQUAL  &mt RIGHT_BRACKET LEFT_BRACKET    &none      &kp HOME      &none     &kp END        &kp RSHIFT  &trans
-                         &kp BACKSPACE    &trans          &kp LC(SPACE)                     &trans     &trans        &kp DEL
+&trans  &kp N1               &kp N2        &kp N3           &kp N4             &kp N5                            &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none       &kp MINUS
+&trans  &mt LSHIFT NUMBER_6  &mt LCTRL N7  &mt LALT N8      &mt LCMD NUMBER_9  &kp N0                            &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none       &kp EQUAL
+&trans  &comma               &period       &mt UNDER MINUS  &mt PLUS EQUAL     &mt RIGHT_BRACKET LEFT_BRACKET    &none      &kp HOME      &none     &kp END        &kp RSHIFT  &trans
+                                           &kp BACKSPACE    &trans             &kp LC(SPACE)                     &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -125,6 +125,15 @@
             >;
 
             label = "Media";
+        };
+
+        window {
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(I)))) LG(LC(LA(I)))          &mt LG(LC(LA(LS(UP)))) LA(LG(LC(UP)))      &mt LG(LC(LA(LS(P)))) LG(LC(LA(P)))          &none
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(LEFT)))) LG(LC(LA(LEFT)))    &mt LG(LC(LA(LS(L)))) LG(LC(LA(L)))        &mt LG(LA(LC(LS(RIGHT)))) LG(LC(LA(RIGHT)))  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(COMMA)))) LG(LC(LA(COMMA)))  &mt LG(LC(LA(LS(DOWN)))) LG(LC(LA(DOWN)))  &mt LS(LA(LC(LG(SLASH)))) LA(LC(LG(SLASH)))  &none
+                     &none  &none  &none    &none  &none  &none
+            >;
         };
     };
 
