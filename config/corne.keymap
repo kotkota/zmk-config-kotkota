@@ -16,24 +16,28 @@
     combos {
         compatible = "zmk,combos";
 
-        SPCE {
+        spc {
             bindings = <&kp SPACE>;
             key-positions = <29 28>;
+            layers = <0>;
         };
 
         harden_sign {
             bindings = <&kp RBKT>;
             key-positions = <31 32>;
+            layers = <0>;
         };
 
         comma {
             bindings = <&comma>;
             key-positions = <25 26>;
+            layers = <0>;
         };
 
         period {
             bindings = <&period>;
             key-positions = <26 27>;
+            layers = <0>;
         };
 
         t_game {
@@ -45,6 +49,13 @@
         fn {
             bindings = <&kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT>;
             key-positions = <24 25>;
+            layers = <0>;
+        };
+
+        lang {
+            bindings = <&cmd_spc>;
+            key-positions = <17 16>;
+            layers = <0>;
         };
     };
 
@@ -61,6 +72,13 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LA(PERIOD)) &kp SPACE>;
             label = "PERIOD";
+        };
+
+        cmd_spc: cmd_spc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "CMD_SPC";
         };
     };
 
