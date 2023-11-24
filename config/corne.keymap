@@ -39,6 +39,12 @@
         t_game {
             bindings = <&tog 4>;
             key-positions = <17 35>;
+            layers = <0 4>;
+        };
+
+        fn {
+            bindings = <&kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT>;
+            key-positions = <24 25>;
         };
     };
 
@@ -59,19 +65,6 @@
     };
 
     behaviors {
-        cmd_spc_enter: cmd_spc_enter {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CMD_SPC_ENTER";
-            #binding-cells = <0>;
-            bindings = <&mt LCMD SPACE>, <&kp ENTER>;
-        };
-
-        cmd_enter_spc: cmd_enter_spc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CMD_ENTER_SPC";
-            #binding-cells = <0>;
-            bindings = <&mt LCMD ENTER>, <&kp SPACE>;
-        };
     };
 
     keymap {
