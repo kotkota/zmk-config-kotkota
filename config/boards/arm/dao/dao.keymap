@@ -1,0 +1,170 @@
+/*
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define DEF 0
+#define LWR 1
+#define RSE 2
+#define ADJ 3
+
+&lt { quick_tap_ms = <200>; };
+&mt {
+    quick_tap_ms = <200>;
+    flavor = "balanced";
+};
+
+/ {
+    chosen {
+        zmk,matrix_transform = &default_transform;
+        // zmk,matrix_transform = &extra_keys_transform;
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        spc {
+            bindings = <&kp SPACE>;
+            key-positions = <29 28>;
+            layers = <0>;
+        };
+
+        harden_sign {
+            bindings = <&kp RBKT>;
+            key-positions = <31 32>;
+            layers = <0>;
+        };
+
+        comma {
+            bindings = <&comma_space>;
+            key-positions = <25 26>;
+            layers = <0>;
+        };
+
+        period {
+            bindings = <&period_space>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
+
+        t_game {
+            bindings = <&tog 4>;
+            key-positions = <17 35>;
+            layers = <0 4>;
+        };
+
+        fn {
+            bindings = <&kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT>;
+            key-positions = <24 25>;
+            layers = <0>;
+        };
+
+        lang {
+            bindings = <&cmd_spc>;
+            key-positions = <17 16>;
+            layers = <0>;
+        };
+    };
+
+    macros {
+        comma_space: comma_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LC(COMMA)) &kp SPACE>;
+            label = "COMMA_SPACE";
+        };
+
+        cmd_spc: cmd_spc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "CMD_SPC";
+        };
+
+        period_space: period_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(PERIOD)) &kp SPACE>;
+            label = "PERIOD_SPACE";
+        };
+    };
+
+    behaviors {
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+
+            bindings = <
+&mt LS(LCMD) ESC            &kp Q         &kp W        &kp E       &kp R        &kp T             &kp Y           &kp U        &kp I                    &kp O                      &kp P            &mt RBKT LBKT
+&mt LA(LCMD) TAB            &mt LSHIFT A  &mt LCTRL S  &mt LALT D  &mt LCMD F   &kp G             &kp H           &mt RCMD J   &mt RALT K               &mt RCTRL L                &mt RSHIFT SEMI  &lt 5 APOS
+&mt LA(LC(LS(LCMD))) GRAVE  &kp Z         &kp X        &kp C       &kp V        &kp B             &kp N           &kp M        &mt LC(LA(COMMA)) COMMA  &mt LA(LC(PERIOD)) PERIOD  &kp SLASH        &lt 3 BACKSLASH
+                                                       &lt 2 DEL   &lt 1 SPACE  &mt LCMD ENTER    &mt RCMD ENTER  &lt 2 SPACE  &lt 1 BACKSPACE
+            >;
+
+            label = "Default";
+        };
+
+        num_layer {
+            bindings = <
+&trans  &kp N1               &kp N2         &kp N3           &kp N4             &kp N5                            &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none            &kp MINUS
+&trans  &mt LSHIFT NUMBER_6  &mt LCTRL N7   &mt LALT N8      &mt LCMD NUMBER_9  &kp N0                            &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RIGHT_SHIFT  &kp EQUAL
+&trans  &comma_space         &period_space  &mt UNDER MINUS  &mt PLUS EQUAL     &mt RIGHT_BRACKET LEFT_BRACKET    &none      &kp HOME      &none     &kp END        &none            &trans
+                                            &kp BACKSPACE    &trans             &trans                            &trans     &trans        &trans
+            >;
+
+            label = "Numbers/Nav";
+        };
+
+        symb_layer {
+
+            bindings = <
+&trans  &kp EXCL   &kp AT    &kp HASH       &kp DLLR              &kp PRCNT                &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR           &kp RPAR       &kp UNDER
+&trans  &kp CARET  &kp AMPS  &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none      &none     &none         &kp LBRC           &kp RBRC       &kp PLUS
+&kp LT  &kp GT     &kp LBKT  &kp RBKT       &kp LEFT_BRACE        &kp RIGHT_BRACE          &none      &none     &none         &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
+                             &kp BACKSPACE  &kp LG(SPACE)         &trans                   &trans     &trans    &kp DELETE
+            >;
+
+            label = "Symbols";
+        };
+
+        media_layer {
+
+            bindings = <
+&kp C_POWER                           &none         &none         &none         &none         &none         &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP
+&caps_word                            &none         &none         &none         &none         &none         &none           &none             &none       &kp UP      &caps_word         &kp LS(LA(LC(LG(SQT))))
+&kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &sys_reset      &none             &kp LEFT    &kp DOWN    &kp RIGHT          &none
+                                                                  &trans        &trans        &trans        &trans          &trans            &trans
+            >;
+
+            label = "Media";
+        };
+
+        game {
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E     &kp R      &kp T      &kp Y    &kp U      &kp I      &kp O    &kp P     &kp LBKT
+&kp LSHFT  &kp A  &kp S  &kp D     &kp F      &kp G      &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V      &kp B      &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+                         &kp LALT  &kp SPACE  &kp RET    &kp ESC  &kp SPACE  &kp RSHFT
+            >;
+        };
+
+        window {
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(I)))) LG(LC(LA(I)))          &mt LG(LC(LA(LS(UP)))) LA(LG(LC(UP)))      &mt LG(LC(LA(LS(P)))) LG(LC(LA(P)))          &none
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(LEFT)))) LG(LC(LA(LEFT)))    &mt LG(LC(LA(LS(L)))) LG(LC(LA(L)))        &mt LG(LA(LC(LS(RIGHT)))) LG(LC(LA(RIGHT)))  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(COMMA)))) LG(LC(LA(COMMA)))  &mt LG(LC(LA(LS(DOWN)))) LG(LC(LA(DOWN)))  &mt LS(LA(LC(LG(SLASH)))) LA(LC(LG(SLASH)))  &none
+                     &none  &none  &none    &none  &none  &none
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+    };
+};
