@@ -126,17 +126,10 @@
 
         symb_layer {
             bindings = <
-<<<<<<< HEAD
-&trans  &kp EXCL   &kp AT    &kp HASH       &kp DLLR              &kp PRCNT              &mwh SCROLL_UP    &mkp MB1           &mmv MOVE_UP    &mkp MB2           &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)
-&trans  &kp CARET  &kp AMPS  &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mwh SCROLL_DOWN  &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mwh SCROLL 10 10     &kp GLOBE
-&kp LT  &kp GT     &kp LBKT  &kp RBKT       &kp LEFT_BRACE        &kp RIGHT_BRACE        &mwh SCROLL_LEFT  &mwh SCROLL_RIGHT  &mkp MB3        &kp RS(RA(EQUAL))  &kp RA(EQUAL)         &kp RS(RA(MINUS))
-                             &kp BACKSPACE  &kp LG(SPACE)         &trans                 &trans            &trans             &kp DELETE
-=======
 &trans  &kp EXCL   &kp AT    &kp HASH       &kp DLLR              &kp PRCNT              &kp PG_UP  &kp LA(LEFT)  &kp UP      &kp LA(RIGHT)      &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)
 &trans  &kp CARET  &kp AMPS  &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PG_DN  &kp LEFT      &kp DOWN    &kp RIGHT          &kp LSHFT             &kp GLOBE
 &kp LT  &kp GT     &kp LBKT  &kp RBKT       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HOME   &kp END       &none       &kp RS(RA(EQUAL))  &kp RA(EQUAL)         &kp RS(RA(MINUS))
                              &kp BACKSPACE  &kp LG(SPACE)         &trans                 &trans     &trans        &kp DELETE
->>>>>>> 4f14d11 (nav adjustment)
             >;
 
             label = "Symbols";
