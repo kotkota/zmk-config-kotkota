@@ -11,9 +11,7 @@
 // #define RSE 2
 // #define ADJ 3
 
-&lt {
-    quick_tap_ms = <200>;
-};
+&lt { quick_tap_ms = <200>; };
 
 &mt {
     quick_tap_ms = <200>;
@@ -96,18 +94,15 @@
         };
     };
 
-    behaviors {
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&mt LS(LCMD) ESC            &kp Q         &kp W        &kp E       &kp R        &kp T           &kp Y           &kp U        &kp I                    &kp O                      &kp P            &mt RBKT LBKT
-&mt LA(LCMD) TAB            &mt LSHIFT A  &mt LCTRL S  &mt LALT D  &mt LCMD F   &kp G           &kp H           &mt RCMD J   &mt RALT K               &mt RCTRL L                &mt RSHIFT SEMI  &lt 5 APOS
-&mt LA(LC(LS(LCMD))) GRAVE  &kp Z         &kp X        &kp C       &kp V        &kp B           &kp N           &kp M        &mt LC(LA(COMMA)) COMMA  &mt LA(LC(PERIOD)) PERIOD  &kp SLASH        &lt 3 BACKSLASH
-                                                       &lt 2 DEL   &lt 1 SPACE  &mt LCMD ENTER  &mt RCMD ENTER  &lt 1 SPACE  &lt 2 BACKSPACE
+&mt LS(LCMD) ESC            &kp Q         &kp W        &kp E            &kp R        &kp T                &kp Y              &kp U        &kp I            &kp O        &kp P            &mt RBKT LBKT
+&mt LA(LCMD) TAB            &mt LSHIFT A  &mt LCTRL S  &mt LALT D       &mt LCMD F   &mt LA(LC(COMMA)) G  &mt LC(LA(DOT)) H  &mt RCMD J   &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &lt 5 APOS
+&mt LA(LC(LS(LCMD))) GRAVE  &kp Z         &kp X        &kp C            &kp V        &kp B                &kp N              &kp M        &kp COMMA        &kp PERIOD   &kp SLASH        &lt 3 BACKSLASH
+                                                       &lt 2 BACKSPACE  &lt 1 SPACE  &mt LCMD ENTER       &mt RCMD ENTER     &lt 1 SPACE  &lt 2 BACKSPACE
             >;
 
             label = "Default";
@@ -118,7 +113,7 @@
 &trans  &kp N1               &kp N2         &kp N3           &kp N4             &kp N5                          &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none            &none
 &trans  &mt LSHIFT NUMBER_6  &mt LCTRL N7   &mt LALT N8      &mt LCMD NUMBER_9  &kp N0                          &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RIGHT_SHIFT  &kp GLOBE
 &trans  &comma_space         &period_space  &mt UNDER MINUS  &mt PLUS EQUAL     &mt RIGHT_BRACKET LEFT_BRACKET  &kp HOME   &kp END       &none     &none          &none            &trans
-                                            &kp BACKSPACE    &trans             &trans                          &trans     &trans        &trans
+                                            &trans           &trans             &trans                          &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -126,10 +121,10 @@
 
         symb_layer {
             bindings = <
-&trans  &kp EXCL   &kp AT    &kp HASH       &kp DLLR              &kp PRCNT              &kp PG_UP  &kp LA(LEFT)  &kp UP      &kp LA(RIGHT)      &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)
-&trans  &kp CARET  &kp AMPS  &kp ASTRK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PG_DN  &kp LEFT      &kp DOWN    &kp RIGHT          &kp LSHFT             &kp GLOBE
-&kp LT  &kp GT     &kp LBKT  &kp RBKT       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HOME   &kp END       &none       &kp RS(RA(EQUAL))  &kp RA(EQUAL)         &kp RS(RA(MINUS))
-                             &kp BACKSPACE  &kp LG(SPACE)         &trans                 &trans     &trans        &kp DELETE
+&trans  &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)      &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)
+&trans  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT          &kp LSHFT             &kp GLOBE
+&kp LT  &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HOME   &kp END       &none     &kp RS(RA(EQUAL))  &kp RA(EQUAL)         &kp RS(RA(MINUS))
+                             &trans     &kp LG(SPACE)         &trans                 &trans     &trans        &trans
             >;
 
             label = "Symbols";
@@ -165,7 +160,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
