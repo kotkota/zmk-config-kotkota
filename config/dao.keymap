@@ -106,7 +106,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "H_";
             #binding-cells = <0>;
-            bindings = <&mt LA(LC(PERIOD)) H>, <&comma_space>;
+            bindings = <&mt LA(LC(PERIOD)) H>, <&period_space>;
         };
     };
 
