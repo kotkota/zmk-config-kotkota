@@ -42,13 +42,13 @@
 
         comma {
             bindings = <&comma_space>;
-            key-positions = <14 15>;
+            key-positions = <25 26>;
             layers = <0>;
         };
 
         period {
             bindings = <&period_space>;
-            key-positions = <15 16>;
+            key-positions = <26 27>;
             layers = <0>;
         };
 
@@ -56,6 +56,12 @@
             bindings = <&tog 4>;
             key-positions = <35 24>;
             layers = <0 4>;
+        };
+
+        fn {
+            bindings = <&kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT>;
+            key-positions = <24 25>;
+            layers = <0>;
         };
 
         lang {
