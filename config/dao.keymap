@@ -13,10 +13,7 @@
 
 &lt { quick_tap_ms = <200>; };
 
-&mt {
-    quick_tap_ms = <200>;
-    flavor = "balanced";
-};
+&mt { flavor = "tap-preferred"; };
 
 / {
     chosen {
@@ -28,12 +25,6 @@
     combos {
         compatible = "zmk,combos";
 
-        spc {
-            bindings = <&kp SPACE>;
-            key-positions = <29 28>;
-            layers = <0>;
-        };
-
         harden_sign {
             bindings = <&kp RBKT>;
             key-positions = <31 32>;
@@ -42,7 +33,7 @@
 
         comma {
             bindings = <&comma_space>;
-            key-positions = <26 27>;
+            key-positions = <3 4>;
             layers = <0>;
         };
 
@@ -62,6 +53,11 @@
             bindings = <&kp LG(SPACE)>;
             key-positions = <16 17>;
             layers = <0>;
+        };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <12 13>;
         };
     };
 
@@ -89,19 +85,6 @@
     };
 
     behaviors {
-        G_: G_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "G_";
-            #binding-cells = <0>;
-            bindings = <&mt LA(LC(COMMA)) G>, <&comma_space>;
-        };
-
-        H_: H_ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "H_";
-            #binding-cells = <0>;
-            bindings = <&mt LA(LC(PERIOD)) H>, <&period_space>;
-        };
     };
 
     keymap {
@@ -111,7 +94,7 @@
             bindings = <
 &mt LS(LCMD) ESC            &kp Q         &kp W        &kp E            &kp R        &kp T                &kp Y                 &kp U        &kp I            &kp O        &kp P            &mt RBKT LBKT
 &mt LA(LCMD) TAB            &mt LSHIFT A  &mt LCTRL S  &mt LALT D       &mt LCMD F   &mt LA(LC(COMMA)) G  &mt LA(LC(PERIOD)) H  &mt RCMD J   &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &lt 5 APOS
-&mt LA(LC(LS(LCMD))) GRAVE  &kp Z         &kp X        &kp C            &kp V        &kp B                &kp N                 &kp M        &kp COMMA        &kp PERIOD   &kp SLASH        &lt 3 BACKSLASH
+&mt LA(LC(LS(LCMD))) GRAVE  &kp Z         &kp X        &kp C            &kp V        &mt SPACE B          &kp N                 &kp M        &kp COMMA        &kp PERIOD   &kp SLASH        &lt 3 BACKSLASH
                                                        &lt 2 BACKSPACE  &lt 1 SPACE  &mt LCMD ENTER       &mt RCMD ENTER        &lt 1 SPACE  &lt 2 BACKSPACE
             >;
 
@@ -120,10 +103,10 @@
 
         num_layer {
             bindings = <
-&trans  &kp N1               &kp N2         &kp N3           &kp N4             &kp N5                          &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none            &none
-&trans  &mt LSHIFT NUMBER_6  &mt LCTRL N7   &mt LALT N8      &mt LCMD NUMBER_9  &kp N0                          &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RIGHT_SHIFT  &kp GLOBE
-&trans  &comma_space         &period_space  &mt UNDER MINUS  &mt PLUS EQUAL     &mt RIGHT_BRACKET LEFT_BRACKET  &kp HOME   &kp END       &none     &none          &none            &trans
-                                            &trans           &trans             &trans                          &trans     &trans        &kp DEL
+&trans         &kp N1               &kp N2        &kp N3        &kp N4             &kp N5      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
+&kp TILDE      &mt LSHIFT NUMBER_6  &mt LCTRL N7  &mt LALT N8   &mt LCMD NUMBER_9  &kp N0      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none         &none
+&kp KP_DIVIDE  &kp KP_MULTIPLY      &kp KP_PLUS   &kp KP_MINUS  &kp KP_EQUAL       &kp KP_DOT  &kp HOME   &kp END       &none     &none          &none         &trans
+                                                  &trans        &trans             &trans      &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -131,10 +114,10 @@
 
         symb_layer {
             bindings = <
-&trans  &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &none     &kp LA(LEFT)  &none  &kp LA(RIGHT)      &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)
-&trans  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none         &none  &none              &kp LSHFT             &kp GLOBE
-&kp LT  &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp HOME  &kp END       &none  &kp RS(RA(EQUAL))  &kp RA(EQUAL)         &kp RS(RA(MINUS))
-                             &trans     &kp LG(SPACE)         &trans                 &none     &none         &none
+&trans  &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &none  &none  &none  &none              &none          &none
+&trans  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &none  &none  &none              &none          &none
+&kp LT  &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &none  &none  &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
+                             &trans     &kp LG(SPACE)         &trans                 &none  &none  &none
             >;
 
             label = "Symbols";
@@ -142,10 +125,10 @@
 
         media_layer {
             bindings = <
-&kp C_POWER                           &none         &none         &none         &none         &none       &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP
-&caps_word                            &none         &none         &none         &none         &none       &none           &none             &none       &kp UP      &caps_word         &kp LS(LA(LC(LG(SQT))))
-&kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR  &sys_reset      &none             &kp LEFT    &kp DOWN    &kp RIGHT          &none
-                                                                  &trans        &trans        &trans      &trans          &trans            &trans
+&kp C_POWER   &none         &none         &none         &none         &none       &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP
+&caps_word    &none         &none         &none         &none         &none       &none           &none             &none       &kp UP      &caps_word         &kp LS(LA(LC(LG(SQT))))
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &sys_reset      &none             &kp LEFT    &kp DOWN    &kp RIGHT          &none
+                                          &trans        &trans        &trans      &trans          &trans            &trans
             >;
 
             label = "Media";
