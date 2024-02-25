@@ -85,7 +85,7 @@
         cmd_f: cmd_f {
             compatible = "zmk,behavior-mod-morph";
             label = "CMD_F";
-            bindings = <&kp F>, <&kp LG(F)>;
+            bindings = <&mt LCMD F>, <&kp LG(F)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
