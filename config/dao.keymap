@@ -99,7 +99,7 @@
         default_layer {
             bindings = <
 &mt LS(LCMD) ESC  &kp Q         &kp W        &kp E            &kp R        &kp T                &kp Y                 &kp U        &kp I            &kp O        &kp P            &mt RBKT LBKT
-&mt CAPS TAB      &mt LSHIFT A  &mt LCTRL S  &mt LALT D       &mt LCMD F   &mt LA(LC(COMMA)) G  &mt LA(LC(PERIOD)) H  &mt RCMD J   &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &lt 5 APOS
+&mt CAPS TAB      &mt LSHIFT A  &mt LCTRL S  &mt LALT D       &cmd_f       &mt LA(LC(COMMA)) G  &mt LA(LC(PERIOD)) H  &mt RCMD J   &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &lt 5 APOS
 &lt 4 GRAVE       &kp Z         &kp X        &kp C            &kp V        &kp B                &kp N                 &kp M        &kp COMMA        &kp PERIOD   &kp SLASH        &lt 4 BACKSLASH
                                              &lt 3 BACKSPACE  &lt 2 SPACE  &mt LCMD ENTER       &mt RCMD ENTER        &lt 2 SPACE  &lt 3 BACKSPACE
             >;
