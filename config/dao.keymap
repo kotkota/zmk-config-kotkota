@@ -129,9 +129,9 @@
 
         symb_layer {
             bindings = <
-&kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &mwh SCROLL_UP    &none  &mmv MOVE_UP    &none              &none          &none
-&kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mwh SCROLL_DOWN  &none  &mmv MOVE_DOWN  &none              &none          &none
-&kp LT        &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none  &none           &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
+&kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &mwh SCROLL_UP    &none  &none  &none              &none          &none
+&kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mwh SCROLL_DOWN  &none  &none  &none              &none          &none
+&kp LT        &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none  &none  &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
                                    &trans     &kp LC(LA(F))         &trans                 &none             &none  &none
             >;
 
