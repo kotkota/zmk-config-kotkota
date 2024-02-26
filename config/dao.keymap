@@ -7,18 +7,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define U_MOUSE_MOVE_MAX 1900
-#define MOU_U MOVE_Y(-U_MOUSE_MOVE_MAX)
-#define MOU_D MOVE_Y(U_MOUSE_MOVE_MAX)
-#define MOU_L MOVE_X(-U_MOUSE_MOVE_MAX)
-#define MOU_R MOVE_X(U_MOUSE_MOVE_MAX)
-
-#define U_MOUSE_SCROLL_MAX 20
-#define SCL_U MOVE_Y(U_MOUSE_SCROLL_MAX)
-#define SCL_D MOVE_Y(-U_MOUSE_SCROLL_MAX)
-#define SCL_L MOVE_X(-U_MOUSE_SCROLL_MAX)
-#define SCL_R MOVE_X(U_MOUSE_SCROLL_MAX)
-
 &lt { quick_tap_ms = <200>; };
 
 &mt {
@@ -142,8 +130,8 @@
 
         symb_layer {
             bindings = <
-&kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &none  &msc SCL_L  &msc SCL_D  &msc SCL_U  &msc SCL_R          &none
-&kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &mmv MOU_L  &mmv MOU_D  &mmv MOU_U  &mmv MOU_R          &none
+&kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &none  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP          &none
+&kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN          &none
 &kp LT        &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &none  &none  &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
                                    &trans     &kp LC(LA(F))         &trans                 &mkp LCLK   &mkp MCLK   &mkp RCLK
             >;

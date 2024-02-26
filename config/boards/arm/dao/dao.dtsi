@@ -6,12 +6,12 @@
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
-
+#include "dao-pinctrl.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
 
 / {
-	model = "Dao";
+	model = "dao";
 	compatible = "dao";
 
 	chosen {
@@ -64,26 +64,19 @@
 
 		diode-direction = "col2row";
 		row-gpios
-			= <&gpio0  6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio0  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			= <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			, <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			, <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			;
 	};
 
-    leds {
-        compatible = "gpio-leds";
-        blue_led: led_0 {
-            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
-        };
-    };
-
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
 		label = "VBATT";
-		io-channels = <&adc 7>; 
+		io-channels = <&adc 0>; 
 		output-ohms = <2000000>;
-		full-ohms = <(2000000 + 820000)>;
+		full-ohms = <(2000000 + 806000)>;
 	};
 	
 };
@@ -108,6 +101,16 @@
 &usbd {
 	status = "okay";
 };
+
+&uart0 {
+	compatible = "nordic,nrf-uarte";
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-1 = <&uart0_sleep>;
+	pinctrl-names = "default", "sleep";
+	status = "okay";
+	current-speed = <115200>;
+};
+
 
 &flash0 {
 	/*
