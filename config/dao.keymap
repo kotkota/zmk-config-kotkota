@@ -17,22 +17,6 @@
     time-to-max-speed-ms = <50>;     // 300
 };
 
-// INPUT configs {{{
-    input_configs {
-        compatible = "zmk,input-configs";
-
-        mmv {
-            device = <&mmv>;
-            scale-multiplier = <4>;
-        };
-
-        msc {
-            device = <&msc>;
-            scale-multiplier = <5>;
-        };
-    };
-// }}}
-
 // #define ZMK_MOUSE_DEFAULT_MOVE_VAL 2500  // 600
 // #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
@@ -192,4 +176,20 @@
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
+
+// INPUT configs {{{
+    input_configs {
+        compatible = "zmk,input-configs";
+
+        mmv {
+            device = <&mmv>;
+            scale-multiplier = <4>;
+        };
+
+        msc {
+            device = <&msc>;
+            scale-multiplier = <5>;
+        };
+    };
+// }}}
 };
