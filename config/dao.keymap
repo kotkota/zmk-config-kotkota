@@ -8,7 +8,6 @@
 #include <behaviors/mouse_keys.dtsi>
 
 &mmv {
-    acceleration-exponent = <1>;      // 1
     time-to-max-speed-ms = <1000>;    // 300
 };
 
@@ -22,6 +21,15 @@
 
 #include <dt-bindings/zmk/mouse.h>
 
+// Layers
+#define DFLT   0
+#define GAME   1
+#define NUMB   2
+#define SYMB   3
+#define MEDIA  4
+#define WINDW  5
+#define ADJ    6
+
 &lt { quick_tap_ms = <200>; };
 
 &mt {
@@ -30,6 +38,27 @@
 };
 
 / {
+// INPUT configs {{{
+    input_configs {
+        compatible = "zmk,input-configs";
+
+        mmv {
+            device = <&mmv>;
+            scale-multiplier = <5>;
+        };
+
+        fmmv {
+            device = <&fmmv>;
+            scale-multiplier = <10>;
+        };
+
+        msc {
+            device = <&msc>;
+            scale-multiplier = <5>;
+        };
+    };
+// }}}
+
     chosen { zmk,matrix_transform = &default_transform; };
 
     combos {
@@ -54,7 +83,7 @@
         };
 
         t_game {
-            bindings = <&tog 1>;
+            bindings = <&tog GAME>;
             key-positions = <35 24>;
             layers = <0 1>;
         };
@@ -98,6 +127,14 @@
     };
 
     behaviors {
+            /omit-if-no-ref/ fmmv: fast_mouse_move {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <250>;
+            acceleration-exponent = <1>;
+        };
         cmd_f: cmd_f {
             compatible = "zmk,behavior-mod-morph";
             label = "CMD_F";
@@ -115,9 +152,9 @@
         default_layer {
             bindings = <
 &mt LS(LCMD) ESC  &kp Q         &kp W        &kp E            &kp R        &kp T                &kp Y                 &kp U        &kp I            &kp O        &kp P            &mt RBKT LBKT
-&mt CAPS TAB      &mt LSHIFT A  &mt LCTRL S  &mt LALT D       &cmd_f       &mt LA(LC(COMMA)) G  &mt LA(LC(PERIOD)) H  &mt RCMD J   &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &lt 5 APOS
-&lt 4 GRAVE       &kp Z         &kp X        &kp C            &kp V        &kp B                &kp N                 &kp M        &kp COMMA        &kp PERIOD   &kp SLASH        &lt 4 BACKSLASH
-                                             &lt 3 BACKSPACE  &lt 2 SPACE  &mt LCMD ENTER       &mt RCMD ENTER        &lt 2 SPACE  &lt 3 BACKSPACE
+&mt CAPS TAB      &mt LSHIFT A  &mt LCTRL S  &mt LALT D       &cmd_f       &mt LA(LC(COMMA)) G  &mt LA(LC(PERIOD)) H  &mt RCMD J   &mt RALT K       &mt RCTRL L  &mt RSHIFT SEMI  &lt WINDW APOS
+&lt MEDIA GRAVE       &kp Z         &kp X        &kp C            &kp V        &kp B                &kp N                 &kp M        &kp COMMA        &kp PERIOD   &kp SLASH        &lt MEDIA BACKSLASH
+                                             &lt SYMB BACKSPACE  &lt NUMB SPACE  &mt LCMD ENTER       &mt RCMD ENTER        &lt NUMB SPACE  &lt SYMB BACKSPACE
             >;
 
             label = "Default";
@@ -128,7 +165,7 @@
 &kp TAB    &kp Q  &kp W  &kp E            &kp R      &kp T        &kp Y    &kp U         &kp I         &kp O    &kp P     &kp LBKT
 &kp LSHFT  &kp A  &kp S  &kp D            &kp F      &kp G        &kp H    &kp J         &kp K         &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C            &kp V      &kp B        &kp N    &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp BSLH
-                         &lt 4 BACKSPACE  &kp SPACE  &lt 2 ENTER  &kp ESC  &kp LEFT_ALT  &kp LEFT_GUI
+                         &lt MEDIA BACKSPACE  &kp SPACE  &lt NUMB ENTER  &kp ESC  &kp LEFT_ALT  &kp LEFT_GUI
             >;
         };
 
@@ -137,7 +174,7 @@
 &trans         &kp N1               &kp N2        &kp N3        &kp N4             &kp N5      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
 &trans         &mt LSHIFT NUMBER_6  &mt LCTRL N7  &mt LALT N8   &mt LCMD NUMBER_9  &kp N0      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none         &none
 &kp KP_DIVIDE  &kp KP_MULTIPLY      &kp KP_PLUS   &kp KP_MINUS  &kp KP_EQUAL       &kp KP_DOT  &kp HOME   &kp END       &none     &none          &none         &trans
-                                                  &trans        &trans             &trans      &trans     &trans        &kp DEL
+                                                  &trans        &mo ADJ            &trans      &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -173,23 +210,19 @@
                      &none  &none  &none        &none        &none  &none
             >;
         };
+
+        adj_layer {
+            bindings = <
+&none  &none  &none  &none  &none  &none  &none       &msc SCRL_LEFT   &fmmv MOVE_UP    &msc SCRL_RIGHT   &msc SCRL_UP    &none
+&none  &none  &none  &none  &none  &none  &none       &fmmv MOVE_LEFT  &fmmv MOVE_DOWN  &fmmv MOVE_RIGHT  &msc SCRL_DOWN  &none
+&none  &none  &none  &none  &none  &none  &none       &none            &none  &none  &none  &none
+                     &trans &trans &trans &mkp LCLK   &mkp MCLK        &mkp RCLK
+            >;
+
+            label = "Adjust";
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
-// INPUT configs {{{
-    input_configs {
-        compatible = "zmk,input-configs";
-
-        mmv {
-            device = <&mmv>;
-            scale-multiplier = <4>;
-        };
-
-        msc {
-            device = <&msc>;
-            scale-multiplier = <5>;
-        };
-    };
-// }}}
 };
