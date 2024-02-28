@@ -10,14 +10,26 @@
 &mmv {
     acceleration-exponent = <1>;      // 1
     time-to-max-speed-ms = <1000>;    // 300
-    scale-multiplier = <4>;
 };
 
 &msc {
     acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <500>;     // 300
+    time-to-max-speed-ms = <50>;     // 300
 };
 
+input_configs {
+    compatible = "zmk,input-configs";
+
+    mmv {
+        device = <&mmv>;
+        scale-multiplier = <4>;
+    };
+
+    msc {
+        device = <&msc>;
+        scale-multiplier = <5>;
+    };
+};
 // #define ZMK_MOUSE_DEFAULT_MOVE_VAL 2500  // 600
 // #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
