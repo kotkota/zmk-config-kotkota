@@ -238,10 +238,10 @@
 
         game {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E                &kp R      &kp T           &kp Y    &kp U         &kp I         &kp O    &kp P     &kp LBKT
-&kp LSHFT  &kp A  &kp S  &kp D                &kp F      &kp G           &kp H    &kp J         &kp K         &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C                &kp V      &kp B           &kp N    &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp BSLH
-                         &lt MEDIA BACKSPACE  &kp SPACE  &lt NUMB ENTER  &kp ESC  &kp LEFT_ALT  &kp LEFT_GUI
+&kp I   &kp TAB    &kp Q  &kp W    &kp E      &kp R        &kp Y    &kp U         &kp I         &kp O    &kp P     &kp LBKT
+&kp N1  &kp LSHFT  &kp A  &kp S    &kp D      &kp F        &kp H    &kp J         &kp K         &kp L    &kp SEMI  &kp SQT
+&kp N2  &kp LCTRL  &kp H  &kp G    &kp C      &kp V        &kp N    &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp BSLH
+                          &kp ESC  &kp SPACE  &lt 2 ENTER  &kp ESC  &kp LEFT_ALT  &kp LEFT_GUI
             >;
         };
 
