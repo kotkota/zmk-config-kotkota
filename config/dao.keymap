@@ -182,6 +182,16 @@
             bindings = <&mt LA(LS(EQUAL)) LA(EQUAL)>;
             key-positions = <7 8>;
         };
+
+        ha {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <30 31>;
+        };
+
+        ae {
+            bindings = <&kp SQT>;
+            key-positions = <32 33>;
+        };
     };
 
     macros {
