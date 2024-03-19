@@ -12,3 +12,4 @@ jobs:
           token: ${{ secrets.PRIVATE_GITHUB_TOKEN }}
           save_period: 10
           save_min_runs_number: 5
+          
