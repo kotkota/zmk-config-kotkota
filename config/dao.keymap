@@ -179,7 +179,7 @@
         };
 
         quo {
-            bindings = <&mt LA(LS(EQUAL)) LA(EQUAL)>;
+            bindings = <&mt LA(EQUAL) LA(LS(EQUAL))>;
             key-positions = <7 8>;
         };
 
