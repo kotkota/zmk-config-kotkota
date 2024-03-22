@@ -36,6 +36,7 @@
 &mt {
     flavor = "tap-preferred";
     hold-trigger-on-release;
+    tapping-term-ms = <300>;
 };
 
 / {
