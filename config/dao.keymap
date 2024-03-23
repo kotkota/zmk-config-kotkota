@@ -307,10 +307,10 @@
 
         num {
             bindings = <
-&trans         &kp N1               &kp N2        &kp N3        &kp N4             &kp N5      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
-&trans         &mt LSHIFT NUMBER_6  &mt LCTRL N7  &mt LALT N8   &mt LCMD NUMBER_9  &kp N0      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none         &none
-&kp KP_DIVIDE  &kp KP_MULTIPLY      &kp KP_PLUS   &kp KP_MINUS  &kp KP_EQUAL       &kp KP_DOT  &kp HOME   &kp END       &none     &none          &none         &trans
-                                                  &trans        &trans             &trans      &trans     &trans        &kp DEL
+&trans           &kp N1               &kp N2        &kp N3       &kp N4             &kp N5      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
+&trans           &mt LSHIFT NUMBER_6  &mt LCTRL N7  &mt LALT N8  &mt LCMD NUMBER_9  &kp N0      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none         &none
+&kp KP_MULTIPLY  &kp KP_DIVIDE        &kp PLUS      &kp MINUS    &kp EQUAL          &kp KP_DOT  &kp HOME   &kp END       &none     &none          &none         &trans
+                                                    &trans       &trans             &trans      &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -332,7 +332,7 @@
 &kp C_POWER  &kp LS(LG(N1))  &kp LS(LG(N2))  &kp LG(LS(N3))  &kp LS(LG(N4))  &kp LS(LG(N5))  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP
 &none        &none           &none           &none           &none           &none           &none           &none             &none       &none       &none              &kp LS(LA(LC(LG(SQT))))
 &none        &kp LG(Z)       &kp LG(X)       &kp LG(C)       &kp LG(V)       &kp LS(LG(Z))   &none           &none             &none       &none       &none              &none
-                                             &trans          &trans          &upd_fw_l       &upd_fw_r       &trans            &trans
+                                             &upd_fw_l       &trans          &trans          &trans          &trans            &upd_fw_r
             >;
 
             label = "Buttons/Media";
