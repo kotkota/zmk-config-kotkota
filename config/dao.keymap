@@ -280,6 +280,15 @@
             hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17>;
             require-prior-idle-ms = <300>;
         };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NEW_BEHAVIOR";
+            bindings = <&kp Q>, <&kp LA(NUMBER_1)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
     };
 
     keymap {
