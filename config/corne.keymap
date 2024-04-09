@@ -5,6 +5,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // #define DEF 0
 // #define LWR 1
@@ -148,9 +149,9 @@
 
         window {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(I)))) LG(LC(LA(I)))          &mt LG(LC(LA(LS(UP)))) LA(LG(LC(UP)))      &mt LG(LC(LA(LS(P)))) LG(LC(LA(P)))          &none
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(I)))) LG(LC(LA(I)))          &mt LG(LC(LA(LS(UP)))) LA(LG(LC(UP)))      &mt LG(LC(LA(LS(P)))) LG(LC(LA(P)))          &out OUT_BLE
 &none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(LEFT)))) LG(LC(LA(LEFT)))    &mt LG(LC(LA(LS(L)))) LG(LC(LA(L)))        &mt LG(LA(LC(LS(RIGHT)))) LG(LC(LA(RIGHT)))  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(COMMA)))) LG(LC(LA(COMMA)))  &mt LG(LC(LA(LS(DOWN)))) LG(LC(LA(DOWN)))  &mt LS(LA(LC(LG(SLASH)))) LA(LC(LG(SLASH)))  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &mt LG(LC(LA(LS(COMMA)))) LG(LC(LA(COMMA)))  &mt LG(LC(LA(LS(DOWN)))) LG(LC(LA(DOWN)))  &mt LS(LA(LC(LG(SLASH)))) LA(LC(LG(SLASH)))  &out OUT_USB
                      &none  &none  &none    &none  &none  &none
             >;
         };
