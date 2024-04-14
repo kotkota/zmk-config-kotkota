@@ -48,10 +48,10 @@
             scale-multiplier = <5>;
         };
 
-        fmmv {
-            device = <&mmv>;
-            scale-multiplier = <10>;
-        };
+        // fmmv {
+        //     device = <&mmv>;
+        //     scale-multiplier = <10>;
+        // };
 
         msc {
             device = <&msc>;
@@ -241,14 +241,14 @@
     behaviors {
         /omit-if-no-ref/
 
-        fmmv: fast_mouse_move {
-            compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            time-to-max-speed-ms = <250>;
-            acceleration-exponent = <1>;
-        };
+        // fmmv: fast_mouse_move {
+        //     compatible = "zmk,behavior-input-two-axis";
+        //     #binding-cells = <1>;
+        //     x-input-code = <INPUT_REL_X>;
+        //     y-input-code = <INPUT_REL_Y>;
+        //     time-to-max-speed-ms = <250>;
+        //     acceleration-exponent = <1>;
+        // };
 
         cmd_f: cmd_f {
             compatible = "zmk,behavior-mod-morph";
@@ -330,8 +330,8 @@
 
         adj {
             bindings = <
-&none  &none  &none  &none   &none   &none   &msc SCRL_UP    &msc SCRL_LEFT   &fmmv MOVE_UP    &msc SCRL_RIGHT   &none  &none
-&none  &none  &none  &none   &none   &none   &msc SCRL_DOWN  &fmmv MOVE_LEFT  &fmmv MOVE_DOWN  &fmmv MOVE_RIGHT  &none  &none
+&none  &none  &none  &none   &none   &none   &msc SCRL_UP    &msc SCRL_LEFT   &mmv MOVE_UP    &msc SCRL_RIGHT   &none  &none
+&none  &none  &none  &none   &none   &none   &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
 &none  &none  &none  &none   &none   &none   &none           &kp N1           &none            &none             &none  &none
                      &trans  &trans  &trans  &mkp MB1        &mkp MB2         &mkp MB3
             >;
