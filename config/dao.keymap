@@ -20,7 +20,6 @@
 #define SYMB   3
 #define MEDIA  4
 #define WINDW  5
-#define ADJ    6
 
 &mmv {
     time-to-max-speed-ms = <1000>;    // 300
@@ -268,7 +267,7 @@
         default_layer {
             bindings = <
 &mt LS(LCMD) ESC          &kp Q         &kp W        &kp E               &kp R           &kp T           &kp Y           &kp U           &kp I               &kp O        &kp P            &kp LBKT
-&mt LA(LS(LC(LGUI))) TAB  &mt LSHIFT A  &mt LCTRL S  &mt LALT D          &mt LGUI F      &kp G           &kp H           &mt RCMD J      &mt RALT K          &mt RCTRL L  &mt RSHIFT SEMI  &lt WINDW APOS
+&mt LA(LS(LC(LGUI))) TAB  &mt LCTRL A  &mt LALT S  &mt LGUI D          &mt LSHIFT F      &kp G           &kp H           &mt RSHIFT J      &mt RCMD K          &mt RALT L  &mt RCTRL SEMI  &lt WINDW APOS
 &lt MEDIA GRAVE           &kp Z         &kp X        &kp C               &kp V           &kp B           &kp N           &kp M           &kp COMMA           &kp PERIOD   &kp SLASH        &lt MEDIA BACKSLASH
                                                      &lt SYMB BACKSPACE  &lt NUMB SPACE  &mt LCMD ENTER  &mt RCMD ENTER  &lt NUMB SPACE  &lt SYMB BACKSPACE
             >;
@@ -278,17 +277,17 @@
 
         game {
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E    &kp R      &kp T        &kp Y          &kp U         &kp I         &kp O    &kp P     &kp LBKT
-&kp LSHFT   &kp A  &kp S  &kp D    &kp F      &kp G        &kp H          &kp J         &kp K         &kp L    &kp SEMI  &kp SQT
-&kp LCTRL   &kp Z  &kp X  &kp C    &kp V      &kp B        &kp N          &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp BSLH
-                          &kp TAB  &kp SPACE  &lt 2 ENTER  &kp BACKSPACE  &kp LEFT_ALT  &kp LEFT_GUI
+&kp ESCAPE     &kp T       &kp Q  &kp W      &kp E      &kp R   &kp Y          &kp U         &kp I         &kp O    &kp P     &kp LBKT
+&kp TAB        &kp LSHFT   &kp A  &kp S      &kp D      &kp F   &kp H          &kp J         &kp K         &kp L    &kp SEMI  &kp SQT
+&lt NUMB ENTER &kp LCTRL   &kp Z  &kp X      &kp C      &kp V   &kp N          &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp BSLH
+                                  &kp B      &kp SPACE  &kp G   &kp BACKSPACE  &kp LEFT_ALT  &kp LEFT_GUI
             >;
         };
 
         num {
             bindings = <
 &trans           &kp N1               &kp N2        &kp N3       &kp N4             &kp N5      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
-&trans           &mt LSHIFT NUMBER_6  &mt LCTRL N7  &mt LALT N8  &mt LCMD NUMBER_9  &kp N0      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none         &none
+&trans           &mt LCTRL NUMBER_6  &mt LALT N7  &mt LCMD N8  &mt LSHIFT NUMBER_9  &kp N0      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none         &none
 &kp KP_MULTIPLY  &kp KP_DIVIDE        &kp PLUS      &kp MINUS    &kp EQUAL          &kp KP_DOT  &kp HOME   &kp END       &none     &none          &none         &trans
                                                     &trans       &trans             &trans      &trans     &trans        &kp DEL
             >;
@@ -301,7 +300,7 @@
 &kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT    &none          &none
 &kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none          &none
 &kp LT        &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none           &none           &none           &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
-                                   &trans     &kp LC(LA(F))         &mo ADJ                &mkp MB1        &mkp MB2        &mkp MB3
+                                   &trans     &kp LC(LA(F))         &trans                &mkp MB1        &mkp MB2        &mkp MB3
             >;
 
             label = "Symbols/Pointer";
@@ -329,14 +328,6 @@
             label = "Bluetooth/Window";
         };
 
-        adj {
-            bindings = <
-&none  &none  &none  &none   &none   &none   &msc SCRL_UP    &msc SCRL_LEFT   &mmv MOVE_UP    &msc SCRL_RIGHT   &none  &none
-&none  &none  &none  &none   &none   &none   &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&none  &none  &none  &none   &none   &none   &none           &kp N1           &none            &none             &none  &none
-                     &trans  &trans  &trans  &mkp MB1        &mkp MB2         &mkp MB3
-            >;
-        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
