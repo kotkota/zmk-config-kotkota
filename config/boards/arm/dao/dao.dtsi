@@ -69,6 +69,7 @@
 			, <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			, <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			;
+		wakeup-source;
 	};
 
 	vbatt: vbatt {
