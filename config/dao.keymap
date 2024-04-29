@@ -3,8 +3,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 // Layers
 
@@ -29,9 +29,7 @@
 / {
     // INPUT configs {{{
 
-    input_configs {
-        compatible = "zmk,input-configs";
-    };
+    input_configs { compatible = "zmk,input-configs"; };
 
     // }}}
 
@@ -228,7 +226,9 @@
         soff: soft_off {
             compatible = "zmk,behavior-soft-off";
             #binding-cells = <0>;
+
             // split-peripheral-off-on-press;
+
             hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
         };
     };
@@ -238,9 +238,9 @@
 
         default_layer {
             bindings = <
-&mt LS(LCMD) ESC          &kp Q         &kp W        &kp E               &kp R           &kp T           &kp Y           &kp U           &kp I               &kp O        &kp P            &kp LBKT
-&mt LA(LS(LC(LGUI))) TAB  &mt LSHIFT A  &mt LCTRL S  &mt LALT D          &mt LGUI F      &kp G           &kp H           &mt RCMD J      &mt RALT K          &mt RCTRL L  &mt RSHIFT SEMI  &lt WINDW APOS
-&lt MEDIA GRAVE           &kp Z         &kp X        &kp C               &kp V           &kp B           &kp N           &kp M           &kp COMMA           &kp PERIOD   &kp SLASH        &lt MEDIA BACKSLASH
+&mt LS(LCMD) ESC          &kp Q         &kp W        &kp E               &kp R           &kp T           &kp Y             &kp U           &kp I               &kp O        &kp P            &kp LBKT
+&mt LA(LS(LC(LGUI))) TAB  &mt LSHIFT A  &mt LCTRL S  &mt LALT D          &mt LGUI F      &kp G           &kp H             &mt RCMD J      &mt RALT K          &mt RCTRL L  &mt RSHIFT SEMI  &lt WINDW APOS
+&lt MEDIA GRAVE           &kp Z         &kp X        &kp C               &kp V           &kp B           &kp N             &kp M           &kp COMMA           &kp PERIOD   &kp SLASH        &lt MEDIA BACKSLASH
                                                      &lt SYMB BACKSPACE  &lt NUMB SPACE  &mt LCMD ENTER  &mt RSHIFT ENTER  &lt NUMB SPACE  &lt SYMB BACKSPACE
             >;
 
@@ -249,19 +249,19 @@
 
         game {
             bindings = <
-&kp ESCAPE     &kp T       &kp Q  &kp W      &kp E      &kp R   &kp Y          &kp U         &kp I         &kp O    &kp P     &kp LBKT
-&kp TAB        &kp LSHFT   &kp A  &kp S      &kp D      &kp F   &kp H          &kp J         &kp K         &kp L    &kp SEMI  &kp SQT
-&lt NUMB ENTER &kp LCTRL   &kp Z  &kp X      &kp C      &kp V   &kp N          &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp BSLH
-                                  &kp B      &kp SPACE  &kp G   &kp BACKSPACE  &kp LEFT_ALT  &kp LEFT_GUI
+&kp ESCAPE      &kp T      &kp Q  &kp W  &kp E      &kp R  &kp Y          &kp U         &kp I         &kp O    &kp P     &kp LBKT
+&kp TAB         &kp LSHFT  &kp A  &kp S  &kp D      &kp F  &kp H          &kp J         &kp K         &kp L    &kp SEMI  &kp SQT
+&lt NUMB ENTER  &kp LCTRL  &kp Z  &kp X  &kp C      &kp V  &kp N          &kp M         &kp COMMA     &kp DOT  &kp FSLH  &kp BSLH
+                                  &kp B  &kp SPACE  &kp G  &kp BACKSPACE  &kp LEFT_ALT  &kp LEFT_GUI
             >;
         };
 
         num {
             bindings = <
-&trans           &kp N1               &kp N2        &kp N3       &kp N4             &kp N5      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
-&trans           &mt LSHIFT NUMBER_6  &mt LCTRL N7  &mt LALT N8  &mt LCMD NUMBER_9  &kp N0      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &none         &none
-&kp KP_MULTIPLY  &kp KP_DIVIDE        &kp PLUS      &kp MINUS    &kp EQUAL          &kp KP_DOT  &kp HOME   &kp END       &none     &none          &none         &trans
-                                                    &trans       &trans             &trans      &trans     &trans        &kp DEL
+&trans     &kp KP_MULTIPLY       &kp N7              &kp N8         &kp N9             &kp KP_PLUS      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
+&trans     &mt LSHIFT KP_DIVIDE  &mt LCTRL NUMBER_4  &mt LALT N5    &mt LCMD NUMBER_6  &kp KP_SUBTRACT  &kp HOME   &kp LEFT      &kp DOWN  &kp RIGHT      &kp END       &none
+&kp EQUAL  &kp N0                &kp N1              &kp N2         &kp N3             &kp KP_DOT       &kp PG_DN  &kp LG(LEFT)  &none     &kp LG(RIGHT)  &none         &trans
+                                                     &kp LC(LA(F))  &trans             &trans           &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -269,10 +269,10 @@
 
         symb {
             bindings = <
-&kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &none   &none  &none  &none    &none          &none
-&kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none   &none  &none  &none    &none          &none
-&kp LT        &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none   &none  &none  &kp RS(RA(EQUAL))  &kp RA(EQUAL)  &kp RS(RA(MINUS))
-                                   &trans     &kp LC(LA(F))         &trans                 &none   &none  &none
+&kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &none  &none  &none  &none  &none  &none
+&kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &none  &none  &none  &none  &none
+&kp LT        &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &none  &none  &none  &none  &none
+                                   &trans     &kp LC(LA(X))         &trans                 &none  &none  &none
             >;
 
             label = "Symbols/Pointer";
@@ -281,7 +281,7 @@
         media {
             bindings = <
 &kp C_POWER             &kp LS(LG(N1))     &kp LS(LG(N2))     &kp LG(LS(N3))     &kp LS(LG(N4))     &kp LS(LG(N5))     &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP
-&mt LC(RIGHT) LC(LEFT)  &mt LC(N6) LC(N1)  &mt LC(N7) LC(N2)  &mt LC(N8) LC(N3)  &mt LC(N9) LC(N4)  &mt LC(N0) LC(N5)  &none           &none             &none       &none       &none              &kp LS(LA(LC(LG(SQT))))
+&mt LC(RIGHT) LC(LEFT)  &mt LC(N6) LC(N1)  &mt LC(N7) LC(N2)  &mt LC(N8) LC(N3)  &mt LC(N9) LC(N4)  &mt LC(N0) LC(N5)  &none           &none             &none       &none       &none              &none
 &none                   &kp LG(Z)          &kp LG(X)          &kp LG(C)          &kp LG(V)          &kp LS(LG(Z))      &none           &none             &none       &none       &none              &none
                                                               &upd_fw_l          &bootloader        &sys_reset         &sys_reset      &bootloader       &upd_fw_r
             >;
@@ -291,15 +291,14 @@
 
         window {
             bindings = <
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_PRV  &bt BT_NXT      &none  &none  &mt LG(LC(LA(LS(I)))) LG(LC(LA(I)))          &mt LG(LC(LA(LS(UP)))) LA(LG(LC(UP)))      &mt LG(LC(LA(LS(P)))) LG(LC(LA(P)))          &soff
-&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 3  &bt BT_DISC 3  &none       &bt BT_CLR_ALL  &none  &none  &mt LG(LC(LA(LS(LEFT)))) LG(LC(LA(LEFT)))    &mt LG(LC(LA(LS(L)))) LG(LC(LA(L)))        &mt LG(LA(LC(LS(RIGHT)))) LG(LC(LA(RIGHT)))  &none
-&none          &none          &none          &none          &none       &none           &none  &none  &mt LG(LC(LA(LS(COMMA)))) LG(LC(LA(COMMA)))  &mt LG(LC(LA(LS(DOWN)))) LG(LC(LA(DOWN)))  &mt LS(LA(LC(LG(SLASH)))) LA(LC(LG(SLASH)))  &none
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_PRV  &bt BT_NXT      &none  &none  &none  &none  &none  &soff
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 3  &bt BT_DISC 3  &none       &bt BT_CLR_ALL  &none  &none  &none  &none  &none  &none
+&none          &none          &none          &none          &none       &none           &none  &none  &none  &none  &none  &none
                                              &none          &none       &none           &none  &none  &none
             >;
 
             label = "Bluetooth/Window";
         };
-
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
