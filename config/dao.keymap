@@ -258,10 +258,10 @@
 
         num {
             bindings = <
-&trans     &kp KP_MULTIPLY       &kp N7              &kp N8         &kp N9             &kp KP_PLUS      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
-&trans     &mt LSHIFT KP_DIVIDE  &mt LCTRL NUMBER_4  &mt LALT N5    &mt LCMD NUMBER_6  &kp KP_SUBTRACT  &kp HOME   &kp LEFT      &kp DOWN  &kp RIGHT      &kp END       &none
-&kp EQUAL  &kp N0                &kp N1              &kp N2         &kp N3             &kp KP_DOT       &kp PG_DN  &kp LG(LEFT)  &none     &kp LG(RIGHT)  &none         &trans
-                                                     &kp LC(LA(F))  &trans             &trans           &trans     &trans        &kp DEL
+&trans     &kp KP_MULTIPLY       &kp N7              &kp N8       &kp N9             &kp KP_PLUS      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
+&trans     &mt LSHIFT KP_DIVIDE  &mt LCTRL NUMBER_4  &mt LALT N5  &mt LCMD NUMBER_6  &kp KP_SUBTRACT  &kp HOME   &kp LEFT      &kp DOWN  &kp RIGHT      &kp END       &none
+&kp EQUAL  &kp N0                &kp N1              &kp N2       &kp N3             &kp KP_DOT       &kp PG_DN  &kp LG(LEFT)  &none     &kp LG(RIGHT)  &none         &trans
+                                                     &trans       &trans             &trans           &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -272,7 +272,7 @@
 &kp UNDER     &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp PRCNT              &none  &none  &none  &none  &none  &none
 &kp LA(SEMI)  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &none  &none  &none  &none  &none
 &kp LT        &kp GT     &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &none  &none  &none  &none  &none
-                                   &trans     &kp LC(LA(X))         &trans                 &none  &none  &none
+                                   &trans     &kp LC(LA(F))         &trans                 &none  &none  &none
             >;
 
             label = "Symbols/Pointer";
