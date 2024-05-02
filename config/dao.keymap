@@ -221,8 +221,8 @@
         default_layer {
             bindings = <
 &mt LS(LCMD) ESC          &kp Q         &kp W        &kp E               &kp R           &kp T           &kp Y             &kp U           &kp I               &kp O        &kp P            &kp BACKSLASH
-&mt LA(LS(LC(LGUI))) TAB  &mt LSHIFT A  &mt LCTRL S  &mt LALT D          &mt LGUI F      &kp G           &kp H             &mt RCMD J      &mt RALT K          &mt RCTRL L  &mt RSHIFT SEMI  &mt LS(LA(LC(LCMD))) RBKT
-&lt MEDIA GRAVE           &kp Z         &kp X        &kp C               &kp V           &kp B           &kp N             &kp M           &kp COMMA           &kp PERIOD   &kp SLASH        &lt MEDIA LBKT
+&mt LA(LS(LC(LGUI))) TAB  &mt LSHIFT A  &mt LCTRL S  &mt LALT D          &mt LGUI F      &kp G           &kp H             &mt RCMD J      &mt RALT K          &mt RCTRL L  &mt RSHIFT SEMI  &mt LS(LA(LC(LCMD))) LBKT
+&lt MEDIA GRAVE           &kp Z         &kp X        &kp C               &kp V           &kp B           &kp N             &kp M           &kp COMMA           &kp PERIOD   &kp SLASH        &lt MEDIA RBKT
                                                      &lt SYMB BACKSPACE  &lt NUMB SPACE  &mt LCMD ENTER  &mt RSHIFT ENTER  &lt NUMB SPACE  &lt SYMB BACKSPACE
             >;
 
@@ -240,10 +240,10 @@
 
         num {
             bindings = <
-&trans     &kp KP_MULTIPLY       &kp KP_N7        &kp KP_N8       &kp KP_N9       &kp KP_PLUS      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
-&trans     &mt LSHIFT KP_DIVIDE  &mt LCTRL KP_N4  &mt LALT KP_N5  &mt LCMD KP_N6  &kp KP_SUBTRACT  &kp HOME   &kp LEFT      &kp DOWN  &kp RIGHT      &kp END       &none
-&kp EQUAL  &kp KP_NUMBER_0       &kp KP_N1        &kp KP_N2       &kp KP_N3       &kp KP_DOT       &kp PG_DN  &kp LG(LEFT)  &none     &kp LG(RIGHT)  &none         &trans
-                                                  &trans          &trans          &trans           &trans     &trans        &kp DEL
+&trans         &kp KP_MULTIPLY       &kp KP_N7        &kp KP_N8       &kp KP_N9       &kp KP_PLUS      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
+&trans         &mt LSHIFT KP_DIVIDE  &mt LCTRL KP_N4  &mt LALT KP_N5  &mt LCMD KP_N6  &kp KP_SUBTRACT  &kp HOME   &kp LEFT      &kp DOWN  &kp RIGHT      &kp END       &none
+&mt RBKT LBKT  &kp KP_NUMBER_0       &kp KP_N1        &kp KP_N2       &kp KP_N3       &kp EQUAL        &kp PG_DN  &kp LG(LEFT)  &none     &kp LG(RIGHT)  &none         &trans
+                                                      &trans          &trans          &trans           &trans     &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
@@ -251,10 +251,10 @@
 
         symb {
             bindings = <
-&kp UNDER     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp N5           &none  &none  &none  &none  &none  &none
-&kp LA(SEMI)  &kp NUMBER_6  &kp N7        &kp N8        &kp N9          &kp N0           &none  &none  &none  &none  &none  &none
-&kp LT        &kp GT        &kp LBKT      &kp RBKT      &kp LEFT_BRACE  &kp RIGHT_BRACE  &none  &none  &none  &none  &none  &none
-                                          &trans        &kp LC(LA(F))   &trans           &none  &none  &none
+&kp UNDER          &kp NUMBER_1       &kp NUMBER_2   &kp NUMBER_3           &kp NUMBER_4    &kp N5          &none  &none     &none     &none      &none      &none
+&kp LA(LS(COMMA))  &kp NUMBER_6       &kp N7         &kp N8                 &kp N9          &kp N0          &none  &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT  &none
+&kp LA(LS(GRAVE))  &kp LS(LA(EQUAL))  &kp LS(LA(L))  &kp LS(LA(SEMICOLON))  &kp LA(LS(N9))  &kp LS(LA(N0))  &none  &none     &none     &none      &none      &none
+                                                     &trans                 &kp LC(LA(F))   &trans          &none  &none     &none
             >;
 
             label = "Symbols/Pointer";
