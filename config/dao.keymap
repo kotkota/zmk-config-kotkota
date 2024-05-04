@@ -240,10 +240,10 @@
 
         num {
             bindings = <
-&trans         &kp KP_MULTIPLY       &kp KP_N7        &kp KP_N8       &kp KP_N9       &kp KP_PLUS      &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp LG(LBKT)  &kp LG(RBKT)
-&trans         &mt LSHIFT KP_DIVIDE  &mt LCTRL KP_N4  &mt LALT KP_N5  &mt LCMD KP_N6  &kp KP_SUBTRACT  &kp HOME   &kp LEFT      &kp DOWN  &kp RIGHT      &kp END       &none
-&mt RBKT LBKT  &kp KP_NUMBER_0       &kp KP_N1        &kp KP_N2       &kp KP_N3       &kp EQUAL        &kp PG_DN  &kp LG(LEFT)  &none     &kp LG(RIGHT)  &none         &trans
-                                                      &trans          &trans          &trans           &trans     &trans        &kp DEL
+&trans         &kp KP_MULTIPLY       &kp KP_N7        &kp KP_N8       &kp KP_N9       &kp PLUS   &kp HOME  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp PG_UP     &none
+&trans         &mt LSHIFT KP_DIVIDE  &mt LCTRL KP_N4  &mt LALT KP_N5  &mt LCMD KP_N6  &kp MINUS  &kp END   &kp LEFT      &kp DOWN  &kp RIGHT      &kp PG_DN     &none
+&mt RBKT LBKT  &kp KP_NUMBER_0       &kp KP_N1        &kp KP_N2       &kp KP_N3       &kp EQUAL  &none     &none         &none     &kp LG(LBKT)   &kp LG(RBKT)  &trans
+                                                      &trans          &trans          &trans     &trans    &trans        &kp DEL
             >;
 
             label = "Numbers/Nav";
