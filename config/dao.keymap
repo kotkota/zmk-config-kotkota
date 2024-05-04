@@ -25,6 +25,7 @@
 &soft_off {
     hold-time-ms = <2000>; // Only turn off it the key is held for 5 seconds or longer.
 };
+
 / {
     // INPUT configs {{{
 
@@ -152,6 +153,11 @@
             bindings = <&mt LA(LS(MINUS)) MINUS>;
             key-positions = <7 8>;
         };
+
+        soff {
+            bindings = <&soft_off>;
+            key-positions = <25 17>;
+        };
     };
 
     macros {
@@ -203,7 +209,6 @@
             mods = <(MOD_LCTL)>;
             keep-mods = <(MOD_LSFT|MOD_LALT)>;
         };
-
     };
 
     keymap {
@@ -248,7 +253,7 @@
                                                      &trans                 &kp LC(LA(F))   &trans          &none  &none     &none
             >;
 
-            label = "Symbols/Pointer";
+            label = "Symbols";
         };
 
         media {
@@ -263,5 +268,12 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        adjust {
+            if-layers = <3 2>;
+            then-layer = <4>;
+        };
+    };
 };
