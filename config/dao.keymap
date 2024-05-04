@@ -22,6 +22,9 @@
     hold-trigger-on-release;
 };
 
+&soft_off {
+    hold-time-ms = <2000>; // Only turn off it the key is held for 5 seconds or longer.
+};
 / {
     // INPUT configs {{{
 
@@ -201,14 +204,6 @@
             keep-mods = <(MOD_LSFT|MOD_LALT)>;
         };
 
-        soft_off: soft_off {
-            compatible = "zmk,behavior-soft-off";
-            #binding-cells = <0>;
-
-            split-peripheral-off-on-press;
-
-            hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
-        };
     };
 
     keymap {
