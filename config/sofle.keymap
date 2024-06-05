@@ -37,61 +37,73 @@
         sch {
             bindings = <&kp LA(I)>;
             key-positions = <20 21>;
+            layers = <0>;
         };
 
         tone {
             bindings = <&kp LA(M)>;
             key-positions = <45 46>;
+            layers = <0>;
         };
 
         yo {
             bindings = <&kp LA(T)>;
             key-positions = <16 17>;
+            layers = <0>;
         };
 
         space {
             bindings = <&kp LA(SPACE)>;
             key-positions = <40 41>;
+            layers = <0>;
         };
 
         dash {
             bindings = <&mt LA(LS(MINUS)) MINUS>;
             key-positions = <31 32>;
+            layers = <0>;
         };
 
         ch_lang {
             bindings = <&kp CAPS>;
             key-positions = <28 26>;
+            layers = <0>;
         };
 
         comma_sp {
             bindings = <&comma_space>;
             key-positions = <38 39>;
+            layers = <0>;
         };
 
         period_sp {
             bindings = <&period_space>;
             key-positions = <39 40>;
+            layers = <0>;
         };
 
         ch_lang2 {
             bindings = <&kp CAPS>;
             key-positions = <31 33>;
+            layers = <0>;
         };
 
         under_ellipsis {
             bindings = <&mt LS(LA(COMMA)) LS(MINUS)>;
             key-positions = <19 20>;
+            layers = <0>;
         };
 
         off {
             bindings = <&soft_off>;
             key-positions = <29 37>;
+            layers = <0>;
         };
 
         game_tog {
             bindings = <&tog 1>;
             key-positions = <36 49>;
+            layers = <0 1>;
         };
     };
 
@@ -172,11 +184,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC                    &kp N1       &kp N2         &kp N3      &kp N4      &kp N5                                         &kp N6       &kp N7      &kp N8      &kp N9         &kp N0          &kp BACKSPACE
-&mt LS(LCMD) LOCKING_CAPS  &kp Q        &kp W          &kp E       &kp R       &kp T                                          &kp Y        &kp U       &kp I       &kp O          &kp P           &kp BACKSLASH
-&mt LS(LA(LC(LCMD))) TAB   &mt LSHFT A  &mt LCTRL S    &mt LALT D  &mt LCMD F  &kp G                                          &kp H        &mt RCMD J  &mt RALT K  &mt RCTRL L    &mt RSHFT SEMI  &mt RS(RA(RC(RCMD))) LEFT_BRACKET
-&qlt 4 0                   &kp Z        &kp X          &kp C       &kp V       &kp B        &none             &none           &kp N        &kp M       &kp COMMA   &kp DOT        &kp SLASH       &lt 4 RIGHT_BRACKET
-                                        &mt LCTRL DEL  &kp LALT    &lt 2 BSPC  &lt 3 SPACE  &mt LCMD ENTER    &mt RCMD ENTER  &lt 3 SPACE  &lt 2 BSPC  &kp RALT    &mt RCTRL DEL
+&kp ESC                   &kp N1       &kp N2         &kp N3      &kp N4      &kp N5                                         &kp N6       &kp N7      &kp N8      &kp N9         &kp N0          &kp BACKSPACE
+&mt LS(LCMD) CAPS         &kp Q        &kp W          &kp E       &kp R       &kp T                                          &kp Y        &kp U       &kp I       &kp O          &kp P           &kp BACKSLASH
+&mt LS(LA(LC(LCMD))) TAB  &mt LSHFT A  &mt LCTRL S    &mt LALT D  &mt LCMD F  &kp G                                          &kp H        &mt RCMD J  &mt RALT K  &mt RCTRL L    &mt RSHFT SEMI  &mt RS(RA(RC(RCMD))) LEFT_BRACKET
+&qlt 4 0                  &kp Z        &kp X          &kp C       &kp V       &kp B        &none             &none           &kp N        &kp M       &kp COMMA   &kp DOT        &kp SLASH       &lt 4 RIGHT_BRACKET
+                                       &mt LCTRL DEL  &kp LALT    &lt 3 BSPC  &lt 2 SPACE  &mt LCMD ENTER    &mt RCMD ENTER  &lt 2 SPACE  &lt 3 BSPC  &kp RALT    &mt RCTRL DEL
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP>, <&inc_dec_kp RIGHT LEFT>;
@@ -190,6 +202,27 @@
 &kp B    &kp LCTRL  &kp Z   &kp X   &kp C   &kp V      &trans     &trans  &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RBKT
                     &kp I   &kp H   &kp G   &kp SPACE  &kp RET    &trans  &trans  &trans  &trans     &trans
             >;
+        };
+
+        raise_layer {
+            // ------------------------------------------------------------------------------------------------------------
+            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
+            // |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
+            // |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
+            // |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+            //              |      |       |       |      |      |  |      |      |      |       |      |
+
+            bindings = <
+&trans  &none               &none                  &none                 &none           &none                        &none     &none         &none     &none          &none         &kp DEL
+&none   &kp KP_MULTIPLY     &kp KP_N7              &kp KP_N8             &kp KP_N9       &kp PLUS                     &kp HOME  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp PG_UP     &trans
+&none   &mt LSHFT KP_SLASH  &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &kp MINUS                    &kp END   &kp LEFT      &kp DOWN  &kp RIGHT      &kp PG_DN     &none
+&trans  &kp KP_N0           &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp EQUAL  &trans    &trans  &none     &none         &none     &kp LG(LBKT)   &kp LG(RBKT)  &trans
+                            &trans                 &trans                &trans          &trans     &trans    &trans  &trans    &trans        &trans    &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp RIGHT LEFT>,
+                <&inc_dec_kp LA(RIGHT) LA(LEFT)>;
         };
 
         lower_layer {
@@ -214,37 +247,18 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //              |      |       |       |      |      |  |      |      |      |       |      |
-
-            bindings = <
-&trans  &none               &none                  &none                 &none           &none                        &none     &none         &none     &none          &none         &kp DEL
-&none   &kp KP_MULTIPLY     &kp KP_N7              &kp KP_N8             &kp KP_N9       &kp PLUS                     &kp HOME  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp PG_UP     &trans
-&none   &mt LSHFT KP_SLASH  &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &kp MINUS                    &kp END   &kp LEFT      &kp DOWN  &kp RIGHT      &kp PG_DN     &none
-&trans  &kp KP_N0           &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp EQUAL  &trans    &trans  &none     &none         &none     &kp LG(LBKT)   &kp LG(RBKT)  &trans
-                            &trans                 &trans                &trans          &trans     &trans    &trans  &trans    &trans        &trans    &trans
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp RIGHT LEFT>,
-                <&inc_dec_kp LA(RIGHT) LA(LEFT)>;
-        };
-
         adjust_layer {
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                          &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp K_MUTE   &kp C_VOL_DN  &kp C_VOL_UP
 &none       &none         &none         &none         &none         &none                                 &none       &none       &none       &none        &none         &none
 &none       &none         &none         &none         &none         &none                                 &none       &none       &none       &none        &none         &none
 &none       &sys_reset    &none         &none         &none         &none         &none        &none      &none       &none       &none       &none        &sys_reset    &none
-                          &bootloader   &none         &none         &upd_fw_rr    &upd_fw_l    &upd_fw_r  &none       &none       &none     &bootloader
+                          &bootloader   &none         &none         &upd_fw_rr    &upd_fw_l    &upd_fw_r  &none       &none       &none       &bootloader
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
