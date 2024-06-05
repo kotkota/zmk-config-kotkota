@@ -1,47 +1,27 @@
-# ZMK Firmware for Dao keyboard
+# ZMK Config Optimized for Sofle Keyboards
 
-This is a repository for a ZMK Firmware for both Dao42 keyboards.
+This is a zmk config that uses a [zmk fork that is optimized for the sofle keyboard](https://github.com/infused-kim/zmk/tree/sofle). It improves encoder, display and underglow support of zmk.
 
-* [main](https://github.com/yumagulovrn/dao-zmk-config/tree/main) branch is for Dao42
-* [dao44](https://github.com/yumagulovrn/dao-zmk-config/tree/dao44) branch is, obviously, for Dao44
+While it's been optimized for and tested with a sofle choc keyboard, it can be benificial for and should work with any split keyboard that is using encoders and displays.
 
-## FAQ
+## It adds the following features and fixes:
 
-- [FAQ](#faq)
-  - [How to change the keymap?](#how-to-change-the-keymap)
-  - [How to flash the keyboard?](#how-to-flash-the-keyboard)
-  - [How to pair halves?](#how-to-pair-halves)
-  - [Problems](#problems)
-    - [I'm getting File Transfer Error after copying firmware to the keyboard](#im-getting-file-transfer-error-after-copying-firmware-to-the-keyboard)
+* Adds underglow (used for backlight) support to Sofle shield ([PR #1188](https://github.com/zmkfirmware/zmk/pull/1188))
+* Fixes split side encoder not working ([PR #728](https://github.com/zmkfirmware/zmk/pull/728))
+* Fixes display not working if you toggle external power off and then on again ([Issue #674](https://github.com/zmkfirmware/zmk/issues/674))
+* Adds automatic disabling and enabling of external power when USB is disconnected or connected ([PR #1184](https://github.com/zmkfirmware/zmk/pull/1184))
+* Adds automatic disabling of backlight if the keyboard is idle ([PR #1179](https://github.com/zmkfirmware/zmk/pull/1179))
 
-### How to change the keymap?
+Most of these fixes and features have not made it into the official zmk yet, because they don't meet the (very resaonable and completely understandable) code standards of the zmk maintainers.
 
-1. Fork the repository https://github.com/yumagulovrn/dao-zmk-config
-2. Make changes to the [dao.keymap](../config/boards/arm/dao/dao.keymap) file in your repository OR use wonderful https://nickcoutsos.github.io/keymap-editor/
-3. Commit changes to your repository
-4. Go to `Actions` tab in your repository
-5. Wait for the GitHub Action to complete
-6. Grab `firmware.zip` file - it contains firmware for both of your halves
+However, while these fixes and features may not meet the quality standards of the official project, they work well enough to be used until these features get properly implemented in the official zmk.
 
-### How to flash the keyboard?
+## How to use
 
-1. Obtain `firmware.zip`
-2. Unzip `firmware.zip` - you should have `dao_left.uf2` and `dao_right.uf2` files
-3. Turn off the power for selected halve (move slider to position `OFF`)
-4. Connect selected halve to the PC via USB-C cable
-5. Press `RESET` button **twice** to enter DFU mode - you should see new USB device in your file manager
-6. Copy the corresponding firmware to the root directory of the new USB device
-7. Disconnect selected halve from the PC
-8. Repeat steps 3-7 for the other halve
+1. Fork this repo
+2. Clone the repo to your computer
+3. Edit the config and keymap files
+4. Push your changes to github
+5. Download the firmware from the actions tab
 
-### How to pair halves?
-
-1. Turn off the power for both halves (move slider to position `OFF`)
-2. Turn on the power for both halves (move slider to position `ON`)
-3. Press `RESET` button **once** on both halves **simultaneously**
-
-### Problems
-
-#### I'm getting File Transfer Error after copying firmware to the keyboard
-
-It's OK. Proof: https://zmk.dev/docs/troubleshooting#file-transfer-error
+Alternatively, you could probably even use github's built-in editor to edit the keymap and config file after forking.
