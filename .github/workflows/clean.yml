@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete workflow runs
-        uses: dmvict/clean-workflow-runs@v1.2.2
+        uses: dmvict/clean-workflow-runs@v1
         with:
           token: ${{ secrets.PRIVATE_GITHUB_TOKEN }}
-          save_min_runs_number: 2
+          save_period: 30
+          save_min_runs_number: 5
+          dry: false
