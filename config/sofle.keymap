@@ -16,7 +16,7 @@
 &mt {
     flavor = "balanced";
     hold-trigger-on-release;
-    require-prior-idle-ms = <75>;
+    require-prior-idle-ms = <100>;
 };
 
 &soft_off { hold-time-ms = <2000>; };
@@ -109,6 +109,11 @@
             bindings = <&mt LA(GRAVE) GRAVE>;
             key-positions = <47 48>;
         };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <22 21>;
+        };
     };
 
     macros {
@@ -156,19 +161,10 @@
             bindings = <&kp CAPS>, <&caps_word>;
         };
 
-        quote: quote {
-            compatible = "zmk,behavior-tap-dance";
-            label = "QUOTE";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&kp LS(GRAVE)>, <&kp LA(GRAVE)>;
-
-            tapping-term-ms = <350>;
-        };
-
         qlt: qlt {
             compatible = "zmk,behavior-hold-tap";
             label = "QLT";
-            bindings = <&mo>, <&quote>;
+            bindings = <&mo>, <&none>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
