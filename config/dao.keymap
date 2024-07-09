@@ -10,7 +10,6 @@
 // #include "zmk-helpers/helper.h"
 // #include "zmk-helpers/key-labels/42.h"
 // #include "zmk-helpers/unicode-chars/russian.dtsi"
-
 // Layers
 
 #define DFLT   0
@@ -82,6 +81,7 @@
         sch {
             bindings = <&kp LA(I)>;
             key-positions = <8 9>;
+            layers = <0>;
         };
 
         harden_sign {
@@ -164,6 +164,7 @@
         under {
             bindings = <&mt LA(LS(LG(COMMA))) LS(MINUS)>;
             key-positions = <7 8>;
+            layers = <0>;
         };
 
         bullet {
