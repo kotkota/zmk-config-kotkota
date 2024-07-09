@@ -1,14 +1,14 @@
 /*
  * SPDX-License-Identifier: MIT
  */
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-
 // urob zmk-helpers
+
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/42.h"
 #include "zmk-helpers/unicode-chars/russian.dtsi"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 // Layers
 
@@ -184,6 +184,18 @@
             bindings = <&kp EQUAL>;
             key-positions = <28 29>;
         };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <7 8>;
+            layers = <2>;
+        };
+
+        bsp {
+            bindings = <&kp BSPC>;
+            key-positions = <8 9>;
+            layers = <2>;
+        };
     };
 
     macros {
@@ -226,14 +238,14 @@
     behaviors {
         /omit-if-no-ref/
 
-        cmd_f: cmd_f {
+        cmd_to_shift: cmd_to_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "CMD_F";
-            bindings = <&mt LCMD F>, <&kp LG(F)>;
+            label = "⌘F / ⇧";
+            bindings = <&mt LCMD F>, <&mt LSHIFT F>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-            keep-mods = <(MOD_LSFT|MOD_LALT)>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
         };
     };
 
@@ -243,7 +255,7 @@
         default_layer {
             bindings = <
 &mt LS(LCMD) ESC          &kp Q         &kp W        &kp E               &kp R           &kp T           &kp Y             &kp U           &kp I               &kp O        &kp P            &kp BACKSLASH
-&mt LA(LS(LC(LGUI))) TAB  &mt LSHIFT A  &mt LCTRL S  &mt LALT D          &mt LGUI F      &kp G           &kp H             &mt RCMD J      &mt RALT K          &mt RCTRL L  &mt RSHIFT SEMI  &mt LS(LA(LC(LCMD))) LBKT
+&mt LA(LS(LC(LGUI))) TAB  &mt LSHIFT A  &mt LCTRL S  &mt LALT D          &cmd_to_shift   &kp G           &kp H             &mt RCMD J      &mt RALT K          &mt RCTRL L  &mt RSHIFT SEMI  &mt LS(LA(LC(LCMD))) LBKT
 &lt MEDIA GRAVE           &kp Z         &kp X        &kp C               &kp V           &kp B           &kp N             &kp M           &kp COMMA           &kp PERIOD   &kp SLASH        &lt MEDIA RBKT
                                                      &lt SYMB BACKSPACE  &lt NUMB SPACE  &mt LCMD ENTER  &mt RSHIFT ENTER  &lt NUMB SPACE  &lt SYMB BACKSPACE
             >;
