@@ -112,13 +112,13 @@
 
         del {
             bindings = <&kp DEL>;
-            key-positions = <19 20>;
+            key-positions = <20 21>;
             layers = <2>;
         };
 
         bsp {
             bindings = <&kp BSPC>;
-            key-positions = <19 18>;
+            key-positions = <20 19>;
             layers = <2>;
         };
     };
