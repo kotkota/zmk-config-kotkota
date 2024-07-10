@@ -105,14 +105,21 @@
             key-positions = <46 47>;
         };
 
-        single_q {
-            bindings = <&mt LA(GRAVE) GRAVE>;
+        grave {
+            bindings = <&kp LA(GRAVE)>;
             key-positions = <47 48>;
         };
 
         del {
             bindings = <&kp DEL>;
-            key-positions = <22 21>;
+            key-positions = <19 20>;
+            layers = <2>;
+        };
+
+        bsp {
+            bindings = <&kp BSPC>;
+            key-positions = <19 18>;
+            layers = <2>;
         };
     };
 
