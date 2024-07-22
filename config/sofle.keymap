@@ -38,18 +38,21 @@
             bindings = <&kp LA(I)>;
             key-positions = <20 21>;
             layers = <0>;
+            slow-release;
         };
 
         tone {
             bindings = <&kp LA(M)>;
             key-positions = <45 46>;
             layers = <0>;
+            slow-release;
         };
 
         yo {
             bindings = <&kp LA(T)>;
             key-positions = <16 17>;
             layers = <0>;
+            slow-release;
         };
 
         space {
@@ -62,30 +65,35 @@
             bindings = <&mt LA(LS(MINUS)) MINUS>;
             key-positions = <31 32>;
             layers = <0>;
+            slow-release;
         };
 
         ch_lang {
             bindings = <&kp CAPS>;
             key-positions = <28 31>;
             layers = <0>;
+            slow-release;
         };
 
         comma_sp {
             bindings = <&comma_space>;
             key-positions = <38 39>;
             layers = <0>;
+            slow-release;
         };
 
         period_sp {
             bindings = <&period_space>;
             key-positions = <39 40>;
             layers = <0>;
+            slow-release;
         };
 
         under_ellipsis {
             bindings = <&mt LS(LA(COMMA)) LS(MINUS)>;
             key-positions = <19 20>;
             layers = <0>;
+            slow-release;
         };
 
         off {
@@ -103,11 +111,15 @@
         double_q {
             bindings = <&kp LS(GRAVE)>;
             key-positions = <46 47>;
+            slow-release;
+            layers = <0>;
         };
 
         grave {
             bindings = <&kp LA(GRAVE)>;
             key-positions = <47 48>;
+            slow-release;
+            layers = <0>;
         };
 
         del {
@@ -120,6 +132,7 @@
             bindings = <&kp BSPC>;
             key-positions = <20 19>;
             layers = <2>;
+            slow-release;
         };
     };
 
@@ -220,7 +233,9 @@
                     &kp I   &kp H   &kp G   &kp SPACE  &kp RET    &trans  &trans  &trans  &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp RBKT LBKT>;
+            sensor-bindings =
+                <&inc_dec_kp RBKT LBKT>,
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         raise_layer {
