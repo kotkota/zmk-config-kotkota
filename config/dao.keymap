@@ -239,7 +239,7 @@
         equals_qoute: equals_qoute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp DQT &kp DQT &kp LEFT>;
+            bindings = <&kp EQUAL &kp LS(GRAVE) &kp LS(GRAVE) &kp LEFT>;
             label = "EQUALS_QOUTE";
         };
     };
