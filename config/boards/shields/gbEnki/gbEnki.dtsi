@@ -98,7 +98,7 @@ RC(2,4) RC(2,3) RC(2,2) RC(2,1) RC(2,0)  RC(2,11) RC(2,10) RC(2,9) RC(2,8) RC(2,
         compatible = "zmk,physical-layout";
         display-name = "default";
 
-        kscan = <&kscan_0>;
+        kscan = <&kscan0>;
         transform = <&matrix_transform_0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
