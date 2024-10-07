@@ -30,7 +30,7 @@
 
     // }}}
 
-    chosen { zmk,matrix_transform = &default_transform; };
+    chosen { zmk,physical-layout = &default_layout; };
 
     combos {
         compatible = "zmk,combos";
@@ -265,7 +265,7 @@
                                                      &lt 3 BACKSPACE  &lt 2 SPACE    &mt LCMD ENTER  &mt RSHIFT ENTER  &lt 2 SPACE  &lt 3 BACKSPACE
             >;
 
-            label = "Default";
+            display-name = "Default";
         };
 
         game {
@@ -285,7 +285,7 @@
                                                       &trans          &trans          &trans     &trans    &trans        &kp DEL
             >;
 
-            label = "Numbers/Nav";
+            display-name = "Numbers/Nav";
         };
 
         symb {
@@ -296,7 +296,7 @@
                                                      &trans            &trans          &trans          &trans           &trans          &trans
             >;
 
-            label = "Symbols/Numbers";
+            display-name = "Symbols/Numbers";
         };
 
         media {
@@ -307,7 +307,7 @@
                                                               &upd_fw_l          &bootloader        &upd_fw_r          &sys_reset      &bootloader       &upd_fw_r
             >;
 
-            label = "Buttons/Media";
+            display-name = "Buttons/Media";
         };
     };
 
