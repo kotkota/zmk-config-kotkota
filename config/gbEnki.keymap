@@ -201,42 +201,36 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LC(COMMA)) &kp SPACE>;
-            label = "COMMA_SPACE";
         };
 
         period_space: period_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(PERIOD)) &kp SPACE &sk LSHIFT>;
-            label = "PERIOD_SPACE";
         };
 
         meh: meh {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LC(LEFT_SHIFT))>;
-            label = "MEH";
         };
 
         upd_fw_l: upd_fw {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(LC(LA(LS(NUMBER_1)))) &bootloader>;
-            label = "UPD_FW";
         };
 
         upd_fw_r: upd_fw_r {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(LC(LA(LS(NUMBER_2)))) &bootloader>;
-            label = "UPD_FW_R";
         };
 
         equals_qoute: equals_qoute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp LS(GRAVE) &kp LS(GRAVE) &kp LEFT>;
-            label = "EQUALS_QOUTE";
         };
     };
 
@@ -245,7 +239,6 @@
 
         cmd_to_shift: cmd_to_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "⌘F / ⇧";
             bindings = <&mt LCMD F>, <&mt LSHIFT F>;
 
             #binding-cells = <0>;
