@@ -13,22 +13,24 @@
 #define RAISE 2
 #define ADJST 3
 
+&lt { quick_tap_ms = <200>; };
+
 &mt {
-    flavor = "tap-preferred";
     hold-trigger-on-release;
+    flavor = "balanced";
+    quick-tap-ms = <250>;
 };
 
 &soft_off { hold-time-ms = <2000>; };
 
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&sl { release-after-ms = <2000>; };
+
 / {
-    // Activate ADJST layer by pressing raise and lower
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     adjst_layer {
-    //         if-layers = <LOWER RAISE>;
-    //         then-layer = <ADJST>;
-    //     };
-    // };
 
     combos {
         compatible = "zmk,combos";
@@ -42,7 +44,7 @@
 
         tone {
             bindings = <&kp LA(M)>;
-            key-positions = <45 46>;
+            key-positions = <44 45>;
             layers = <0>;
             slow-release;
         };
@@ -54,24 +56,32 @@
             slow-release;
         };
 
-        space {
-            bindings = <&kp LA(SPACE)>;
-            key-positions = <40 41>;
-            layers = <0>;
+        equal {
+            bindings = <&mt PLUS EQUAL>;
+            key-positions = <30 19>;
         };
 
         dash {
             bindings = <&mt LA(LS(MINUS)) MINUS>;
-            key-positions = <31 32>;
+            key-positions = <31 31>;
             layers = <0>;
             slow-release;
         };
 
-        ch_lang {
-            bindings = <&kp CAPS>;
+        switch_ru {
+            bindings = <&kp LG(LC(LA(LS(J))))>;
             key-positions = <28 31>;
             layers = <0>;
-            slow-release;
+            timeout-ms = <80>;
+            require-prior-idle-ms = <80>;
+        };
+
+        switch_en {
+            bindings = <&kp LG(LC(LA(LS(K))))>;
+            key-positions = <27 32>;
+            timeout-ms = <80>;
+            require-prior-idle-ms = <80>;
+            layers = <0>;
         };
 
         comma_sp {
@@ -107,10 +117,14 @@
             layers = <0 1>;
         };
 
-        double_q {
+        quo {
+            bindings = <&kp GRAVE>;
+            key-positions = <45 46>;
+        };
+
+        dquo {
             bindings = <&kp LS(GRAVE)>;
             key-positions = <46 47>;
-            slow-release;
             layers = <0>;
         };
 
@@ -131,7 +145,28 @@
             bindings = <&kp BSPC>;
             key-positions = <20 19>;
             layers = <2>;
-            slow-release;
+        };
+
+        copy_cut {
+            bindings = <&mt LG(X) LG(C)>;
+            key-positions = <14 15>;
+        };
+
+        paste {
+            bindings = <&mt LA(LC(V)) LG(V)>;
+            key-positions = <15 16>;
+        };
+
+        html_tag {
+            bindings = <&html_tag>;
+            key-positions = <28 29>;
+            layers = <0>;
+        };
+
+        eq_quo {
+            bindings = <&equals_qoute>;
+            key-positions = <40 41>;
+            layers = <0>;
         };
     };
 
@@ -164,11 +199,17 @@
             label = "UPD_FW_R";
         };
 
-        upd_fw_rr: upd_fw {
+        equals_qoute: equals_qoute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(LA(LG(N2))))>;
-            label = "UPD_FW";
+            bindings = <&kp EQUAL &kp LS(GRAVE) &kp LS(GRAVE) &kp LEFT>;
+        };
+
+        html_tag: html_tag {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(O) &kp BACKSLASH &kp LA(P) &kp LEFT>;
+            label = "HTML_TAG";
         };
     };
 
@@ -198,6 +239,30 @@
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
+        };
+
+        mtl: home-row-mods-left {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <180>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41 39 38 37 36 12 24>;
+        };
+
+        mtr: home-row-mods-right {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <180>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
         };
     };
 
