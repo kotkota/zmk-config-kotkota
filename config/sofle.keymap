@@ -60,13 +60,6 @@
             key-positions = <30 31>;
         };
 
-        dash {
-            bindings = <&mt LA(LS(MINUS)) MINUS>;
-            key-positions = <31 31 32>;
-            layers = <0>;
-            slow-release;
-        };
-
         switch_ru {
             bindings = <&kp LG(LC(LA(LS(J))))>;
             key-positions = <28 31>;
@@ -165,6 +158,12 @@
         eq_quo {
             bindings = <&equals_qoute>;
             key-positions = <40 41>;
+            layers = <0>;
+        };
+
+        dash {
+            bindings = <&mt LA(LS(MINUS)) MINUS>;
+            key-positions = <31 32>;
             layers = <0>;
         };
     };
