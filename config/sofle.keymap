@@ -31,7 +31,6 @@
 &sl { release-after-ms = <2000>; };
 
 / {
-
     combos {
         compatible = "zmk,combos";
 
@@ -63,7 +62,7 @@
 
         dash {
             bindings = <&mt LA(LS(MINUS)) MINUS>;
-            key-positions = <31 31>;
+            key-positions = <31 31 32>;
             layers = <0>;
             slow-release;
         };
@@ -311,11 +310,11 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &none               &none                  &none                 &none           &none                        &none     &none         &none     &none          &none         &none
-&none   &kp KP_MULTIPLY     &kp KP_N7              &kp KP_N8             &kp KP_N9       &kp PLUS                     &kp HOME  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp PG_UP     &trans
-&none   &mt LSHFT KP_SLASH  &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &kp MINUS                    &kp END   &kp LEFT      &kp DOWN  &kp RIGHT      &kp PG_DN     &none
-&trans  &kp KP_EQUAL        &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp KP_N0  &trans    &trans  &none     &none         &none     &kp LG(LBKT)   &kp LG(RBKT)  &trans
-                            &trans                 &kp RBKT              &kp LBKT        &trans     &trans    &trans  &trans    &trans        &trans    &trans
+&trans  &none               &none                  &none                 &none           &none                        &none     &none            &none        &none          &none         &none
+&none   &kp KP_MULTIPLY     &kp KP_N7              &kp KP_N8             &kp KP_N9       &kp PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &trans
+&none   &mt LSHFT KP_SLASH  &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &kp MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
+&trans  &kp KP_EQUAL        &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp KP_N0  &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &trans
+                            &trans                 &kp RBKT              &kp LBKT        &trans     &trans    &trans  &trans    &trans           &trans       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
@@ -348,8 +347,8 @@
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none  &bt BT_CLR                           &kp C_PREV    &kp C_PLAY  &kp C_NEXT   &kp K_MUTE  &kp C_VOL_DN     &kp C_VOL_UP
 &none         &none         &none         &none         &none  &none                                &kp KP_PLUS   &kp KP_N7   &kp KP_N8    &kp KP_N9   &kp KP_MULTIPLY  &kp BSPC
 &none         &none         &none         &none         &none  &none                                &kp KP_MINUS  &kp KP_N4   &kp KP_N5    &kp KP_N6   &kp KP_DIVIDE    &none
-&none         &none         &none         &none         &none  &none    &kp K_MUTE    &none      &kp KP_N0     &kp KP_N1   &kp KP_N2    &kp KP_N3   &kp KP_EQUAL     &none
-                            &sys_reset    &bootloader   &none  &none    &upd_fw_l     &upd_fw_r  &kp LBKT      &kp RBKT    &bootloader  &sys_reset
+&none         &none         &none         &none         &none  &none       &kp K_MUTE    &none      &kp KP_N0     &kp KP_N1   &kp KP_N2    &kp KP_N3   &kp KP_EQUAL     &none
+                            &sys_reset    &bootloader   &none  &none       &upd_fw_l     &upd_fw_r  &kp LBKT      &kp RBKT    &bootloader  &sys_reset
             >;
 
             sensor-bindings =
