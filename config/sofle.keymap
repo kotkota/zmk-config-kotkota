@@ -392,13 +392,6 @@
             keep-mods = <(MOD_LGUI)>;
             label = "SW_ESC_Q";
         };
-        num_word: num_word {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <0>;
-            layers = <2>;
-            continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-            ignore-numbers;
-        };
     };
 
     keymap {
@@ -453,7 +446,7 @@
 &none   &none           &none                  &none                 &none           &none                              &none     &none            &none        &none          &none         &none
 &none   &kp ESC         &kp KP_N7              &kp KP_N8             &kp KP_N9       &mt ASTRK PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &none
 &none   &mt LSHFT TAB   &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &mt SLASH MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
-&trans  &num_word       &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp KP_N0        &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
+&none   &period         &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp KP_N0        &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
                         &kp LPAR               &kp RPAR              &kp KP_EQUAL    &trans           &trans    &trans  &trans    &trans           &trans       &trans
             >;
 
@@ -492,7 +485,7 @@
 &trans  &sw_esc_q  &kp GRAVE  &swapper  &kp LG(R)  &kp LG(T)                               &trans  &trans    &trans    &trans     &trans     &trans
 &trans  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI   &kp LG(G)                               &trans  &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &trans
 &trans  &none      &trans     &trans    &trans     &sk LS(LC(LA(LCMD)))  &trans    &trans  &trans  &trans    &trans    &trans     &trans     &trans
-                   &trans     &trans    &trans     &trans                &trans    &trans  &trans  &trans    &trans    &trans
+                   &trans     &trans    &trans     &num_word NUMB        &trans    &trans  &trans  &trans    &trans    &trans
             >;
 
             display-name = "Sticky";
