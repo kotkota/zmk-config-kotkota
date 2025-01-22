@@ -211,26 +211,31 @@
         caret {
             bindings = <&kp LS(N6)>;
             key-positions = <30 18>;
+            layers = <0>;
         };
 
         question {
             bindings = <&kp LS(N7)>;
             key-positions = <31 19>;
+            layers = <0>;
         };
 
         asterisk {
             bindings = <&kp LS(N8)>;
             key-positions = <32 20>;
+            layers = <0>;
         };
 
         lpar {
             bindings = <&kp LS(N9)>;
             key-positions = <33 21>;
+            layers = <0>;
         };
 
         rpar {
             bindings = <&kp LS(N0)>;
             key-positions = <34 22>;
+            layers = <0>;
         };
     };
 
@@ -466,10 +471,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans  &none           &none         &none          &none          &none                        &none      &none          &none           &none           &none           &none
-&trans  &kp F1          &kp F2        &kp F3         &kp F4         &kp F5                       &kp F6     &kp F7         &kp F8          &kp F9          &kp F10         &none
-&trans  &mt LSHFT EXCL  &mt LCTRL AT  &mt LALT HASH  &mt LCMD DLLR  &kp PRCNT                    &kp CARET  &mt RCMD AMPS  &mt RALT ASTRK  &mt RCTRL LPAR  &mt RSHFT RPAR  &none
-&trans  &kp EQUAL       &kp MINUS     &kp KP_PLUS    &kp LBRC       &kp RBRC   &trans    &trans  &kp LBKT   &kp RBKT       &kp SEMI        &kp COLON       &kp BSLH        &trans
+&none  &none           &none         &none          &none          &none                        &none      &none          &none           &none           &none           &none
+&none  &kp F1          &kp F2        &kp F3         &kp F4         &kp F5                       &kp F6     &kp F7         &kp F8          &kp F9          &kp F10         &none
+&none  &mt LSHFT EXCL  &mt LCTRL AT  &mt LALT HASH  &mt LCMD DLLR  &kp PRCNT                    &kp CARET  &mt RCMD AMPS  &mt RALT ASTRK  &mt RCTRL LPAR  &mt RSHFT RPAR  &none
+&none  &kp EQUAL       &kp MINUS     &kp KP_PLUS    &kp LBRC       &kp RBRC   &trans    &trans  &kp LBKT   &kp RBKT       &kp SEMI        &kp COLON       &kp BSLH        &none
                         &trans        &trans         &trans         &trans     &trans    &trans  &trans     &trans         &trans          &trans
             >;
 
@@ -482,10 +487,10 @@
 
         Sticky {
             bindings = <
-&trans  &trans     &trans     &trans    &trans     &trans                                  &trans  &trans    &trans    &trans     &trans     &trans
-&trans  &sw_esc_q  &kp GRAVE  &swapper  &kp LG(R)  &kp LG(T)                               &trans  &trans    &trans    &trans     &trans     &trans
-&trans  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI   &kp LG(G)                               &trans  &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &trans
-&trans  &none      &trans     &trans    &trans     &sk LS(LC(LA(LCMD)))  &trans    &trans  &trans  &trans    &trans    &trans     &trans     &trans
+&none  &none     &none     &none    &none     &none                                  &none  &none    &none    &none     &none     &none
+&none  &sw_esc_q  &kp GRAVE  &swapper  &kp LG(R)  &kp LG(T)                               &none  &none    &none    &none     &none     &none
+&none  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI   &kp LG(G)                               &none  &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &none
+&none  &none      &none     &none    &none     &sk LS(LC(LA(LCMD)))  &trans    &trans  &none  &none    &none    &none     &none     &none
                    &trans     &trans    &trans     &num_word NUMB        &trans    &trans  &trans  &trans    &trans    &trans
             >;
 
