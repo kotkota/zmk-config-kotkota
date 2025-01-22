@@ -179,61 +179,61 @@
         };
 
         excl {
-            bindings = <&kp LS(N1)>;
+            bindings = <&mt LA(N1) LS(N1)>;
             key-positions = <25 13>;
             layers = <0>;
         };
 
         at {
-            bindings = <&kp LS(N2)>;
+            bindings = <&mt LA(N2) LS(N2)>;
             key-positions = <26 14>;
             layers = <0>;
         };
 
         hash {
-            bindings = <&kp LS(N3)>;
+            bindings = <&mt LA(N3) LS(N3)>;
             key-positions = <27 15>;
             layers = <0>;
         };
 
         doll {
-            bindings = <&kp LS(N4)>;
+            bindings = <&mt LA(N4) LS(N4)>;
             key-positions = <28 16>;
             layers = <0>;
         };
 
         percnt {
-            bindings = <&kp LS(N5)>;
+            bindings = <&mt LA(N5) LS(N5)>;
             key-positions = <17 29>;
             layers = <0>;
         };
 
         caret {
-            bindings = <&kp LS(N6)>;
+            bindings = <&mt LA(N6) LS(N6)>;
             key-positions = <30 18>;
             layers = <0>;
         };
 
         question {
-            bindings = <&kp LS(N7)>;
+            bindings = <&mt LA(N7) LS(N7)>;
             key-positions = <31 19>;
             layers = <0>;
         };
 
         asterisk {
-            bindings = <&kp LS(N8)>;
+            bindings = <&mt LA(N8) LS(N8)>;
             key-positions = <32 20>;
             layers = <0>;
         };
 
         lpar {
-            bindings = <&kp LS(N9)>;
+            bindings = <&mt LA(N9) LS(N9)>;
             key-positions = <33 21>;
             layers = <0>;
         };
 
         rpar {
-            bindings = <&kp LS(N0)>;
+            bindings = <&mt LA(N0) LS(N0)>;
             key-positions = <34 22>;
             layers = <0>;
         };
