@@ -165,17 +165,17 @@
 
         esc {
             bindings = <&kp ESC>;
-            key-positions = <13 14>;
+            key-positions = <>;
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <25 26>;
+            key-positions = <>;
         };
 
         sh_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <38 37>;
+            key-positions = <>;
         };
 
         excl {
@@ -277,7 +277,7 @@
         html_tag: html_tag {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LESS_THAN &kp BACKSLASH &kp GREATER_THAN &kp LEFT>;
+            bindings = <&kp LESS_THAN &kp SLASH &kp GREATER_THAN &kp LEFT>;
             label = "HTML_TAG";
         };
 
@@ -448,11 +448,11 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none  &none          &none                  &none                 &none           &none                              &none     &none            &none        &none          &none         &none
-&none  &kp ESC        &kp KP_N7              &kp KP_N8             &kp KP_N9       &mt ASTRK PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &none
-&none  &mt LSHFT TAB  &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &mt SLASH MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
-&none  &period        &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp KP_N0        &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
-                      &kp LPAR               &kp RPAR              &kp KP_EQUAL    &trans           &trans    &trans  &trans    &trans           &trans       &trans
+&trans  &none          &none                  &none                 &none           &none                              &none     &none            &none        &none          &none         &none
+&trans  &kp ESC        &kp KP_N7              &kp KP_N8             &kp KP_N9       &mt ASTRK PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &none
+&trans  &mt LSHFT TAB  &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &mt SLASH MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
+&trans  &period        &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp KP_N0        &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
+                       &kp LPAR               &kp RPAR              &kp KP_EQUAL    &trans           &trans    &trans  &trans    &trans           &trans       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
@@ -470,11 +470,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &none           &none         &none          &none          &none                        &none      &none          &none           &none           &none           &none
-&none  &kp F1          &kp F2        &kp F3         &kp F4         &kp F5                       &kp F6     &kp F7         &kp F8          &kp F9          &kp F10         &none
-&none  &mt LSHFT EXCL  &mt LCTRL AT  &mt LALT HASH  &mt LCMD DLLR  &kp PRCNT                    &kp CARET  &mt RCMD AMPS  &mt RALT ASTRK  &mt RCTRL LPAR  &mt RSHFT RPAR  &none
-&none  &kp EQUAL       &kp MINUS     &kp KP_PLUS    &kp LBRC       &kp RBRC   &trans    &trans  &kp LBKT   &kp RBKT       &kp SEMI        &kp COLON       &kp BSLH        &none
-                       &trans        &trans         &trans         &trans     &trans    &trans  &trans     &trans         &trans          &trans
+&trans  &none           &none         &none          &none          &none                        &none      &none          &none           &none           &none           &none
+&trans  &kp F1          &kp F2        &kp F3         &kp F4         &kp F5                       &kp F6     &kp F7         &kp F8          &kp F9          &kp F10         &none
+&trans  &mt LSHFT EXCL  &mt LCTRL AT  &mt LALT HASH  &mt LCMD DLLR  &kp PRCNT                    &kp CARET  &mt RCMD AMPS  &mt RALT ASTRK  &mt RCTRL LPAR  &mt RSHFT RPAR  &none
+&trans  &kp EQUAL       &kp MINUS     &kp KP_PLUS    &kp LBRC       &kp RBRC   &trans    &trans  &kp LBKT   &kp RBKT       &kp SEMI        &kp COLON       &kp BSLH        &none
+                        &trans        &trans         &trans         &trans     &trans    &trans  &trans     &trans         &trans          &trans
             >;
 
             sensor-bindings =
@@ -488,7 +488,7 @@
             bindings = <
 &none                 &none      &none      &none     &none        &none                             &none   &none     &none     &none      &none      &none
 &none                 &trans     &trans     &none     &kp LG(R)    &kp LG(T)                         &none   &none     &none     &none      &none      &none
-&sk LS(LC(LA(LCMD)))  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI     &kp LG(G)                         &none   &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &none
+&sk LS(LC(LA(LCMD)))  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI     &none                             &none   &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &none
 &none                 &kp Q      &kp GRAVE  &swapper  &kp LS(TAB)  &tabber         &trans    &trans  &none   &none     &none     &none      &none      &none
                                  &trans     &trans    &trans       &num_word NUMB  &trans    &trans  &trans  &trans    &trans    &trans
             >;
