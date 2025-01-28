@@ -433,11 +433,11 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &none          &none                  &none                 &none           &none                              &none     &none            &none        &none          &none         &none
-&trans  &kp ESC        &kp KP_N7              &kp KP_N8             &kp KP_N9       &mt ASTRK PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &none
-&trans  &mt LSHFT TAB  &mt LCTRL KP_NUMBER_4  &mt LALT KP_NUMBER_5  &mt LCMD KP_N6  &mt SLASH MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
-&trans  &period        &kp KP_N1              &kp KP_N2             &kp KP_N3       &kp KP_N0        &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
-                       &kp LPAR               &kp RPAR              &kp KP_EQUAL    &trans           &trans    &trans  &trans    &trans           &trans       &trans
+&trans   &none             &none         &none        &none        &none                              &none     &none            &none        &none          &none         &none
+&kp ESC  &mt GT LT         &kp N7        &kp N8       &kp N9       &mt ASTRK PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &none
+&kp TAB  &mt LSHIFT COLON  &mt LCTRL N4  &mt LALT N5  &mt LCMD N6  &mt SLASH MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
+&trans   &kp KP_EQUAL      &kp N1        &kp N2       &kp N3       &kp N0           &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
+                           &kp LPAR      &kp RPAR     &kp KP_DOT   &trans           &trans    &trans  &trans    &trans           &trans       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
@@ -471,14 +471,15 @@
 
         sticky {
             bindings = <
-&none                 &none      &none      &none     &none        &none                             &none   &none     &none     &none      &none      &none
-&none                 &trans     &trans     &none     &kp LG(R)    &kp LG(T)                         &none   &none     &none     &none      &none      &none
-&sk LS(LC(LA(LCMD)))  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI     &none                             &none   &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &none
-&none                 &kp Q      &kp GRAVE  &swapper  &kp LS(TAB)  &tabber         &trans    &trans  &none   &none     &none     &none      &none      &none
-                                 &trans     &trans    &trans       &num_word NUMB  &trans    &trans  &trans  &trans    &trans    &trans
+&none                 &none      &none         &none          &none        &none                                 &none   &none     &none     &none      &none      &none
+&none                 &trans     &kp LG(LEFT)  &kp LG(RIGHT)  &kp LG(R)    &kp LG(T)                             &none   &none     &none     &none      &none      &none
+&sk LS(LC(LA(LCMD)))  &sk LSHFT  &sk LCTRL     &sk LALT       &sk LGUI     &none                                 &none   &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &none
+&none                 &kp Q      &kp GRAVE     &swapper       &kp LS(TAB)  &tabber         &kp K_MUTE    &trans  &none   &none     &none     &none      &none      &none
+                                 &trans        &trans         &trans       &num_word NUMB  &trans        &trans  &trans  &trans    &trans    &trans
             >;
 
             display-name = "Sticky";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         adjust_layer {
