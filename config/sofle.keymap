@@ -163,21 +163,6 @@
             layers = <0>;
         };
 
-        esc {
-            bindings = <&kp ESC>;
-            key-positions = <>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <>;
-        };
-
-        sh_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <>;
-        };
-
         excl {
             bindings = <&mt LA(N1) LS(N1)>;
             key-positions = <25 13>;
@@ -500,8 +485,8 @@
             bindings = <
 &none  &bt BT_SEL 0          &bt BT_SEL 1          &bt BT_SEL 3    &none           &bt BT_CLR                               &none        &none             &none       &none                 &none         &none
 &none  &kp LG(LS(NUMBER_1))  &kp LS(LG(N2))        &kp LS(LG(N3))  &kp LS(LG(N4))  &kp LS(LG(N5))                           &kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOL_DN          &kp C_VOL_UP  &none
-&none  &sk LSHFT             &sk LCTRL             &sk LALT        &sk LGUI        &none                                    &none        &sk RGUI          &sk RALT    &sk RCTRL             &sk RSHFT     &none
-&none  &none                 &kp LG(Z)             &kp LS(LG(Z))   &none           &none           &kp K_MUTE    &none      &none        &none             &none       &none                 &none         &none
+&none  &none                 &none                 &none           &none           &none                                    &none        &sk RGUI          &sk RALT    &sk RCTRL             &sk RSHFT     &none
+&none  &kp LG(Z)             &kp LG(LS(Z))         &none           &none           &none           &kp K_MUTE    &none      &none        &none             &none       &none                 &none         &none
                              &sk LS(LC(LA(LCMD)))  &sk CAPS        &sys_reset      &bootloader     &upd_fw_l     &upd_fw_r  &bootloader  &sys_reset        &sk CAPS    &sk RA(RC(RS(RCMD)))
             >;
 
