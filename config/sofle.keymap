@@ -222,6 +222,16 @@
             key-positions = <34 22>;
             layers = <0>;
         };
+
+        test1 {
+            bindings = <&kp DOLLAR>;
+            key-positions = <1 2>;
+        };
+
+        test2 {
+            bindings = <&kp DOLLAR>;
+            key-positions = <2 3>;
+        };
     };
 
     macros {
