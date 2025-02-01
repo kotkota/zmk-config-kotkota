@@ -146,13 +146,13 @@
         };
 
         html_tag {
-            bindings = <&kp LA(LS(H))>;
+            bindings = <&mt LA(LS(LC(H))) LA(LS(H))>;
             key-positions = <28 29>;
             layers = <0>;
         };
 
         eq_quo {
-            bindings = <&kp LA(LS(J))>;
+            bindings = <&mt LA(LS(LC(J))) LA(LS(J))>;
             key-positions = <40 41>;
             layers = <0>;
         };
@@ -294,7 +294,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHFT";
             #binding-cells = <0>;
-            bindings = <&kp CAPS>, <&caps_word>;
+            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
         };
 
         qlt: qlt {
@@ -339,24 +339,6 @@
             flavor = "balanced";
             hold-trigger-on-release;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
-        };
-
-        smart_period: smart_period {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SMART_PERIOD";
-            bindings = <&kp>, <&period>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-        };
-
-        smart_comma: smart_comma {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SMART_COMMA";
-            bindings = <&kp>, <&comma>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
         };
 
         smart_pp: smart_pp {
@@ -471,11 +453,11 @@
 
         sticky {
             bindings = <
-&none                 &none      &none         &none          &none        &none                                 &none   &none     &none     &none      &none      &none
-&none                 &trans     &kp LG(LEFT)  &kp LG(RIGHT)  &kp LG(R)    &kp LG(T)                             &none   &none     &none     &none      &none      &none
-&sk LS(LC(LA(LCMD)))  &sk LSHFT  &sk LCTRL     &sk LALT       &sk LGUI     &none                                 &none   &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &none
-&none                 &kp Q      &kp GRAVE     &swapper       &kp LS(TAB)  &tabber         &kp K_MUTE    &trans  &none   &none     &none     &none      &none      &none
-                                 &trans        &trans         &trans       &num_word NUMB  &trans        &trans  &trans  &trans    &trans    &trans
+&none                 &none   &none         &none          &none        &none                                 &none   &none     &none     &none      &none      &none
+&none                 &trans  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LG(R)    &kp LG(T)                             &none   &none     &none     &none      &none      &none
+&sk LS(LC(LA(LCMD)))  &shft   &sk LCTRL     &sk LALT       &sk LGUI     &none                                 &none   &sk RGUI  &sk RALT  &sk RCTRL  &sk RSHFT  &none
+&none                 &kp Q   &kp GRAVE     &swapper       &kp LS(TAB)  &tabber         &kp K_MUTE    &trans  &none   &none     &none     &none      &none      &none
+                              &trans        &trans         &trans       &num_word NUMB  &trans        &trans  &trans  &trans    &trans    &trans
             >;
 
             display-name = "Sticky";
