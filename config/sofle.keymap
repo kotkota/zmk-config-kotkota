@@ -73,14 +73,14 @@
         };
 
         comma {
-            bindings = <&smart_comma F23 0>;
+            bindings = <&mt LC(LA(LS(COMMA))) LC(LA(COMMA))>;
             key-positions = <38 39>;
             layers = <0>;
             slow-release;
         };
 
         period {
-            bindings = <&smart_period F24 0>;
+            bindings = <&mt LC(LA(LS(PERIOD))) LC(LA(PERIOD))>;
             key-positions = <39 40>;
             layers = <0>;
             slow-release;
@@ -221,16 +221,6 @@
             bindings = <&mt LA(N0) LS(N0)>;
             key-positions = <34 22>;
             layers = <0>;
-        };
-
-        slash {
-            bindings = <&kp SLASH>;
-            key-positions = <1 2>;
-        };
-
-        slash_n {
-            bindings = <&kp SLASH>;
-            key-positions = <2 3>;
         };
     };
 
