@@ -146,13 +146,13 @@
         };
 
         html_tag {
-            bindings = <&html_tag>;
+            bindings = <&kp LA(LS(H))>;
             key-positions = <28 29>;
             layers = <0>;
         };
 
         eq_quo {
-            bindings = <&equals_qoute>;
+            bindings = <&kp LA(LS(J))>;
             key-positions = <40 41>;
             layers = <0>;
         };
