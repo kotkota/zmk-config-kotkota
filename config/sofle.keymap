@@ -40,14 +40,14 @@
         ha {
             bindings = <&kp LBKT>;
             key-positions = <20 21>;
-            layers = <0>;
+            layers = <0 1>;
             slow-release;
         };
 
         yo {
             bindings = <&kp BACKSLASH>;
             key-positions = <16 17>;
-            layers = <0>;
+            layers = <0 1>;
             slow-release;
         };
 
@@ -59,7 +59,7 @@
         switch_ru {
             bindings = <&kp LG(LC(LA(LS(N))))>;
             key-positions = <28 31>;
-            layers = <0>;
+            layers = <0 1>;
             timeout-ms = <80>;
             require-prior-idle-ms = <80>;
         };
@@ -69,34 +69,34 @@
             key-positions = <27 32>;
             timeout-ms = <80>;
             require-prior-idle-ms = <80>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         comma {
             bindings = <&mt LC(LA(LS(COMMA))) LC(LA(COMMA))>;
             key-positions = <38 39>;
-            layers = <0>;
+            layers = <0 1>;
             slow-release;
         };
 
         period {
             bindings = <&mt LC(LA(LS(PERIOD))) LC(LA(PERIOD))>;
             key-positions = <39 40>;
-            layers = <0>;
+            layers = <0 1>;
             slow-release;
         };
 
         under_ellipsis {
             bindings = <&mt LA(SEMI) LS(MINUS)>;
             key-positions = <19 20>;
-            layers = <0>;
+            layers = <0 1>;
             slow-release;
         };
 
         off {
             bindings = <&soft_off>;
             key-positions = <29 37>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         game_tog {
@@ -113,14 +113,14 @@
         dquo {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <46 47>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         grave {
             bindings = <&kp GRAVE>;
             key-positions = <47 48>;
             slow-release;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         del {
@@ -148,85 +148,85 @@
         html_tag {
             bindings = <&mt LA(LS(LC(H))) LA(LS(H))>;
             key-positions = <28 29>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         eq_quo {
             bindings = <&mt LA(LS(LC(J))) LA(LS(J))>;
             key-positions = <40 41>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         dash {
             bindings = <&mt LA(LS(MINUS)) MINUS>;
             key-positions = <31 32>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         excl {
             bindings = <&mt LA(N1) LS(N1)>;
             key-positions = <25 13>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         at {
             bindings = <&mt LA(N2) LS(N2)>;
             key-positions = <26 14>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         hash {
             bindings = <&mt LA(N3) LS(N3)>;
             key-positions = <27 15>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         doll {
             bindings = <&mt LA(N4) LS(N4)>;
             key-positions = <28 16>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         percnt {
             bindings = <&mt LA(N5) LS(N5)>;
             key-positions = <17 29>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         caret {
             bindings = <&mt LA(N6) LS(N6)>;
             key-positions = <30 18>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         question {
             bindings = <&mt LA(N7) LS(N7)>;
             key-positions = <31 19>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         asterisk {
             bindings = <&mt LA(N8) LS(N8)>;
             key-positions = <32 20>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         lpar {
             bindings = <&mt LA(N9) LS(N9)>;
             key-positions = <33 21>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         rpar {
             bindings = <&mt LA(N0) LS(N0)>;
             key-positions = <34 22>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         sticky {
             bindings = <&tog 1>;
             key-positions = <35 24>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
     };
 
@@ -371,9 +371,9 @@
             label = "TABBER";
         };
 
-        sticky_tap: sticky_tap {
+        smt: smt {
             compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_TAP";
+            label = "SMT";
             bindings = <&sk>, <&kp>;
 
             #binding-cells = <2>;
@@ -412,7 +412,7 @@
         bindings = <
 &kp ESC                          &kp N1       &kp N2        &kp N3                &kp N4         &kp N5                                            &kp N6       &kp N7      &kp N8                &kp N9        &kp N0          &kp BSPC
 &mt LS(LC(LA(LG(SEMI)))) ESCAPE  &kp Q        &kp W         &kp E                 &kp R          &mt BACKSLASH T                                   &kp Y        &kp U       &kp I                 &kp O         &kp P           &kp LBKT
-&sticky_tap LS(LC(LA(LGUI))) TAB         &sticky_tap LSHFT A  &sticky_tap LCTRL S   &sticky_tap LALT D            &sticky_tap LCMD F &kp G                                             &kp H        &sticky_tap RCMD J  &sticky_tap RALT K            &sticky_tap RCTRL L   &sticky_tap RSHFT SEMI  &mt RA(RC(RS(RCMD))) SQT
+&smt LS(LC(LA(LGUI))) TAB         &smt LSHFT A  &smt LCTRL S   &smt LALT D            &smt LCMD F &kp G                                             &kp H        &smt RCMD J  &smt RALT K            &smt RCTRL L   &smt RSHFT SEMI  &mt RA(RC(RS(RCMD))) SQT
 &lt 6 GRAVE                      &mt CAPS Z   &kp X         &kp C                 &kp V          &kp B            &kp C_PLAY_PAUSE    &kp K_MUTE   &kp N        &mt RBKT M  &kp COMMA             &kp DOT       &mt CAPS SLASH  &lt 6 LS(LC(LA(LG(SEMICOLON))))
                                           &mt CAPS DEL  &kp LS(LC(LA(LCMD)))  &lt 4 BSPC     &lt 3 SPACE      &lt 5 ENTER         &lt 5 ENTER  &lt 3 SPACE  &lt 4 BSPC  &kp RS(RA(RC(RCMD)))  &mt CAPS DEL
         >;
