@@ -380,6 +380,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <250>;
             flavor = "balanced";
+            retro-tap;
         };
     };
 
@@ -446,11 +447,11 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans   &none             &none         &none        &none        &none                              &none     &none            &none        &none          &none         &none
-&kp ESC  &mt GT LT         &kp N7        &kp N8       &kp N9       &mt ASTRK PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &none
-&kp TAB  &mt LSHIFT COLON  &mt LCTRL N4  &mt LALT N5  &mt LCMD N6  &mt SLASH MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
-&trans   &kp KP_EQUAL      &kp N1        &kp N2       &kp N3       &kp N0           &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
-                           &kp LPAR      &kp RPAR     &kp KP_DOT   &trans           &trans    &trans  &trans    &trans           &trans       &trans
+&trans  &none             &none         &none        &none        &none                              &none     &none            &none        &none          &none         &none
+&trans  &mt GT LT         &kp N7        &kp N8       &kp N9       &mt ASTRK PLUS                     &kp HOME  &kp LA(LEFT)     &kp UP       &kp LA(RIGHT)  &kp PG_UP     &none
+&trans  &mt LSHIFT COLON  &mt LCTRL N4  &mt LALT N5  &mt LCMD N6  &mt SLASH MINUS                    &kp END   &kp LEFT         &kp DOWN     &kp RIGHT      &kp PG_DN     &none
+&trans  &kp KP_EQUAL      &kp N1        &kp N2       &kp N3       &kp N0           &trans    &trans  &none     &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(LBKT)   &kp LG(RBKT)  &none
+                          &kp LPAR      &kp RPAR     &kp KP_DOT   &trans           &trans    &trans  &trans    &trans           &trans       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
