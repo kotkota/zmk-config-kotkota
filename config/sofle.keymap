@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define DFLT   0
+#define RU     1
 #define GAME   2
 #define NUMB   3
 #define SYMB   4
@@ -37,213 +38,228 @@
     combos {
         compatible = "zmk,combos";
 
-        ha {
-            bindings = <&kp LBKT>;
-            key-positions = <20 21>;
-            layers = <0 2>;
-            slow-release;
-        };
-
-        yo {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <16 17>;
-            layers = <0 2>;
-            slow-release;
-        };
-
-        equal {
-            bindings = <&mt PLUS EQUAL>;
-            key-positions = <30 31>;
-        };
-
-        switch_ru {
-            bindings = <&kp LG(LC(LA(LS(N))))>;
-            key-positions = <28 31>;
-            layers = <0 2>;
-            timeout-ms = <80>;
-            require-prior-idle-ms = <80>;
-        };
-
-        switch_en {
-            bindings = <&kp LG(LC(LA(LS(M))))>;
-            key-positions = <27 32>;
-            timeout-ms = <80>;
-            require-prior-idle-ms = <80>;
-            layers = <0 2>;
-        };
-
-        comma {
-            bindings = <&mt LC(LA(LS(COMMA))) LC(LA(COMMA))>;
-            key-positions = <38 39>;
-            layers = <0 2>;
-            slow-release;
-        };
-
-        period {
-            bindings = <&mt LC(LA(LS(PERIOD))) LC(LA(PERIOD))>;
-            key-positions = <39 40>;
-            layers = <0 2>;
-            slow-release;
-        };
-
-        under_ellipsis {
-            bindings = <&mt LA(SEMI) LS(MINUS)>;
-            key-positions = <19 20>;
-            layers = <0 2>;
-            slow-release;
-        };
-
-        off {
-            bindings = <&soft_off>;
-            key-positions = <29 37>;
-            layers = <0 2>;
-        };
-
-        game_tog {
+        combo_game_tog {
             bindings = <&tog 3>;
             key-positions = <36 49>;
             layers = <0 3>;
         };
 
-        quo {
+        combo_switch_ru {
+        bindings = <&ru_on>;
+            key-positions = <28 31>;
+            layers = <0 1>;
+            timeout-ms = <80>;
+            require-prior-idle-ms = <80>;
+        };
+
+        combo_switch_en {
+        bindings = <&ru_off>;
+            key-positions = <27 32>;
+            timeout-ms = <80>;
+            require-prior-idle-ms = <80>;
+            layers = <0 1>;
+        };
+
+        combo_ha_sch {
+            bindings = <&kp LBKT>;
+            key-positions = <20 21>;
+            layers = <0 1>;
+        };
+
+        combo_harden_sign {
+            bindings = <&kp RBKT>;
+            key-positions = <31 32>;
+            layers = <1>;
+        };
+
+        combo_yo {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <16 17>;
+            layers = <1>;
+        };
+
+        combo_excl {
+            bindings = <&mt LA(N1) LS(N1)>;
+            key-positions = <25 13>;
+            layers = <0 1>;
+        };
+
+        combo_at {
+            bindings = <&mt LA(N2) LS(N2)>;
+            key-positions = <26 14>;
+            layers = <0 1>;
+        };
+
+        combo_hash {
+            bindings = <&mt LA(N3) LS(N3)>;
+            key-positions = <27 15>;
+            layers = <0 1>;
+        };
+
+        combo_doll {
+            bindings = <&mt LA(N4) LS(N4)>;
+            key-positions = <28 16>;
+            layers = <0 1>;
+        };
+
+        combo_percnt {
+            bindings = <&mt LA(N5) LS(N5)>;
+            key-positions = <17 29>;
+            layers = <0 1>;
+        };
+
+        combo_caret {
+            bindings = <&mt LA(N6) LS(N6)>;
+            key-positions = <30 18>;
+            layers = <0 1>;
+        };
+
+        combo_question {
+            bindings = <&mt LA(N7) LS(N7)>;
+            key-positions = <31 19>;
+            layers = <0 1>;
+        };
+
+        combo_asterisk {
+            bindings = <&mt LA(N8) LS(N8)>;
+            key-positions = <32 20>;
+            layers = <0 1>;
+        };
+
+        combo_lpar {
+            bindings = <&mt LA(N9) LS(N9)>;
+            key-positions = <33 21>;
+            layers = <0 1>;
+        };
+
+        combo_rpar {
+            bindings = <&mt LA(N0) LS(N0)>;
+            key-positions = <34 22>;
+            layers = <0 1>;
+        };
+
+        combo_under_ellipsis {
+            bindings = <&mt LA(SEMI) LS(MINUS)>;
+            key-positions = <19 20>;
+            layers = <0 1>;
+            slow-release;
+        };
+
+        combo_equal {
+            bindings = <&mt PLUS EQUAL>;
+            key-positions = <30 31>;
+        };
+
+        combo_dash {
+            bindings = <&mt LA(LS(MINUS)) MINUS>;
+            key-positions = <31 32>;
+            layers = <0 1>;
+        };
+
+        combo_soft_off {
+            bindings = <&soft_off>;
+            key-positions = <29 37>;
+            layers = <0 1>;
+        };
+
+        combo_quo {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <45 46>;
         };
 
-        dquo {
+        combo_dquo {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <46 47>;
-            layers = <0 2>;
+            layers = <0>;
         };
 
-        grave {
+        combo_dquo_ru {
+            bindings = <&kp LS(N2)>;
+            key-positions = <32 33>;
+            layers = <1>;
+        };
+
+        combo_grave {
             bindings = <&kp GRAVE>;
             key-positions = <47 48>;
             slow-release;
-            layers = <0 2>;
+            layers = <0>;
         };
 
-        del {
+        combo_del {
             bindings = <&kp DEL>;
             key-positions = <20 21>;
             layers = <4>;
         };
 
-        bsp {
+        combo_bsp {
             bindings = <&kp BSPC>;
             key-positions = <20 19>;
             layers = <4>;
         };
 
-        copy_cut {
+        combo_copy_cut {
             bindings = <&mt LG(X) LG(C)>;
             key-positions = <14 15>;
+            layers = <0 1>;
         };
 
-        paste {
+        combo_paste {
             bindings = <&mt LA(LC(V)) LG(V)>;
             key-positions = <15 16>;
+            layers = <0 1>;
         };
 
-        html_tag {
+        combo_html_tag {
             bindings = <&mt LA(LS(LC(H))) LA(LS(H))>;
             key-positions = <28 29>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
-        eq_quo {
+        combo_eq_quo {
             bindings = <&mt LA(LS(LC(J))) LA(LS(J))>;
             key-positions = <40 41>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
-        dash {
-            bindings = <&mt LA(LS(MINUS)) MINUS>;
-            key-positions = <31 32>;
-            layers = <0 2>;
-        };
-
-        excl {
-            bindings = <&mt LA(N1) LS(N1)>;
-            key-positions = <25 13>;
-            layers = <0 2>;
-        };
-
-        at {
-            bindings = <&mt LA(N2) LS(N2)>;
-            key-positions = <26 14>;
-            layers = <0 2>;
-        };
-
-        hash {
-            bindings = <&mt LA(N3) LS(N3)>;
-            key-positions = <27 15>;
-            layers = <0 2>;
-        };
-
-        doll {
-            bindings = <&mt LA(N4) LS(N4)>;
-            key-positions = <28 16>;
-            layers = <0 2>;
-        };
-
-        percnt {
-            bindings = <&mt LA(N5) LS(N5)>;
-            key-positions = <17 29>;
-            layers = <0 2>;
-        };
-
-        caret {
-            bindings = <&mt LA(N6) LS(N6)>;
-            key-positions = <30 18>;
-            layers = <0 2>;
-        };
-
-        question {
-            bindings = <&mt LA(N7) LS(N7)>;
-            key-positions = <31 19>;
-            layers = <0 2>;
-        };
-
-        asterisk {
-            bindings = <&mt LA(N8) LS(N8)>;
-            key-positions = <32 20>;
-            layers = <0 2>;
-        };
-
-        lpar {
-            bindings = <&mt LA(N9) LS(N9)>;
-            key-positions = <33 21>;
-            layers = <0 2>;
-        };
-
-        rpar {
-            bindings = <&mt LA(N0) LS(N0)>;
-            key-positions = <34 22>;
-            layers = <0 2>;
-        };
-
-        sticky {
+        combo_sticky {
             bindings = <&tog 2>;
             key-positions = <35 24>;
-            layers = <0 2>;
+            layers = <0 1>;
+        };
+
+        combo_comma {
+            bindings = <&smart_comma 0 COMMA>;
+            key-positions = <38 39>;
+            layers = <0>;
+        };
+
+        combo_comma_ru {
+            bindings = <&smart_comma_ru 0 LS(N6)>;
+            key-positions = <38 39>;
+            layers = <1>;
+        };
+
+        combo_dot {
+            bindings = <&smart_dot 0 DOT>;
+            key-positions = <39 40>;
+            layers = <0>;
+        };
+
+        combo_dot_ru {
+            bindings = <&smart_dot_ru 0 RS(NUMBER_7)>;
+            key-positions = <39 40>;
+            layers = <1>;
+        };
+
+        combo_fwslash_question {
+            bindings = <&kp SLASH>;
+            key-positions = <47 48>;
+            layers = <1>;
         };
     };
 
     macros {
-        period_space: period_space {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(PERIOD)) &kp SPACE>;
-            label = "PERIOD_SPACE";
-        };
-
-        comma_space: comma_space {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(COMMA)) &kp SPACE>;
-            label = "COMMA_SPACE";
-        };
 
         upd_fw_l: upd_fw_l {
             compatible = "zmk,behavior-macro";
@@ -272,18 +288,53 @@
             label = "HTML_TAG";
         };
 
-        period: period {
+        par: par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(PERIOD))>;
-            label = "PERIOD";
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            tap-ms = <50>;
         };
 
-        comma: comma {
+        brc: brc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(COMMA))>;
-            label = "COMMA";
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+        };
+
+        comma_space: comma_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA &kp SPACE>;
+        };
+
+        dot_space: dot_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp SPACE>;
+        };
+
+        comma_space_ru: comma_space_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(NUMBER_6) &kp SPACE>;
+        };
+
+        dot_space_ru: dot_space_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7) &kp SPACE>;
+        };
+
+        ru_on: to_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_on 1 &kp LS(LA(LC(LG(N))))>;
+        };
+
+        ru_off: to_en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 1 &kp LS(LA(LC(LG(M))))>;
         };
     };
 
@@ -363,7 +414,7 @@
             label = "TABBER";
         };
 
-        smt: smt {
+        smt: sticky_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "SMT";
             bindings = <&sk>, <&kp>;
@@ -374,40 +425,50 @@
             flavor = "tap-preferred";
         };
 
-        ls_a: ls_a {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LS_A";
-            #binding-cells = <0>;
-            bindings = <&mtl LSHIFT A>, <&sk LSHIFT>;
+        smart_dot: smart_dot {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&dot_space>, <&kp>;
 
-            tapping-term-ms = <300>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
 
-        lc_s: lc_s {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LC_S";
-            #binding-cells = <0>;
-            bindings = <&mtl LCTRL S>, <&sk LCTRL>;
+        smart_dot_ru: smart_dot_ru {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&dot_space_ru>, <&kp>;
 
-            tapping-term-ms = <300>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
 
-        la_d: la_d {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LA_D";
-            #binding-cells = <0>;
-            bindings = <&mtl LALT D>, <&sk LALT>;
+        smart_comma: smart_comma {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&comma_space>, <&kp>;
 
-            tapping-term-ms = <300>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
 
-        lg_f: lg_f {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LG_F";
-            #binding-cells = <0>;
-            bindings = <&mtl LGUI F>, <&sk LGUI>;
+        smart_comma_ru: smart_comma_ru {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&comma_space_ru>, <&kp>;
 
-            tapping-term-ms = <300>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
+
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
         };
     };
 
