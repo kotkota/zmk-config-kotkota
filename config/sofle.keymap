@@ -698,11 +698,11 @@
 
         system {
             bindings = <
-&none      &none  &none  &none  &none      &none                         &none          &none          &none          &none           &none  &none
-&none      &none  &none  &none  &none      &out OUT_TOG                  &bt BT_PRV     &bt BT_NXT     &none          &none           &none  &none
-&none      &none  &none  &none  &none      &none                         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none           &none  &ext_power EP_OFF
-&soft_off  &none  &none  &none  &none      &none         &none    &none  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_CLR_ALL  &none  &studio_unlock
-                  &none  &none  &upd_fw_l  &bootloader   &none    &none  &bootloader    &upd_fw_r      &none          &none
+&none      &none  &none  &none  &none         &none                         &none          &none          &none          &none           &none  &none
+&none      &none  &none  &none  &out OUT_USB  &out OUT_BLE                  &bt BT_PRV     &bt BT_NXT     &none          &none           &none  &none
+&none      &none  &none  &none  &none         &none                         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none           &none  &ext_power EP_OFF
+&soft_off  &none  &none  &none  &none         &none         &none    &none  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_CLR_ALL  &none  &studio_unlock
+                  &none  &none  &upd_fw_l     &bootloader   &none    &none  &bootloader    &upd_fw_r      &none          &none
             >;
 
             display-name = "System";
