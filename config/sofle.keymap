@@ -56,7 +56,7 @@
         };
 
         combo_ha_sch {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&kp O>;
             key-positions = <20 21>;
             layers = <1>;
         };
@@ -590,6 +590,26 @@
             ignored-key-positions = <13 14 40>;
             label = "TABBER";
         };
+
+        ru_z: ru_z {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RU_Z";
+            bindings = <&kp P>, <&kp O>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        ru_ha: ru_ha {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RU_HA";
+            bindings = <&kp LEFT_BRACKET>, <&kp P>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
     };
 
     keymap {
@@ -612,7 +632,7 @@
         ru {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans          &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &ru_z   &ru_ha          &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans          &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mt QMARK APOS  &trans
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
